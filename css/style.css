@@ -1,0 +1,17 @@
+.login__logo {
+  text-align: center;
+}
+
+.login__main__title{
+  font-size: 20px;
+}
+
+.login__main__forgetpass {
+  margin: 0px 0px 0px auto;
+}
+
+#form-to-log{
+  border: 0.5px solid #ff0000;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(39, 34, 34, 0.2);
+}
