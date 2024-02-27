@@ -16,17 +16,20 @@ if(loginForm) {
 
     if(userName.value == "") {
       alert("Vui lòng nhập tên đăng nhập!");
+      return;
     }
 
     if(password.value == "") {
       alert("Vui lòng nhập mật khẩu!");
+      return;
     }
 
     if (!validateUsername(userName.value)) {
       alert("Vui lòng nhập đúng định dạng là mã sinh viên!");
+      return;
     }
 
-    window.location.href = "http://127.0.0.1:5500/Front-end%20excercise/quiz.html";
+    window.location.href = "http://127.0.0.1:5500/BTN1_LTW/quiz.html";
   });
 }
 // end login
