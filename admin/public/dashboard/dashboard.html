@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tổng quan</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!-- HEADER  -->
+    <header class="header"> 
+      <div class="container-fluid"> 
+        <div class="row align-items-center"> 
+
+          <div class="col-3"> 
+            <div class="inner-logo">
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html">
+                <img src="https://slink.ptit.edu.vn/favicon.ico" alt="logo">
+                <span id="admin-text">ADMIN</span>
+              </a> 
+            </div>
+          </div>
+
+          <div class="col-9">
+            <div class="text-right">
+              <a href="/my-account" class="btn btn-light btn-sm mr-2" id="username">Le Van A</a>
+
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/login.html" class="btn btn-danger btn-sm mr-2" id="logout">Đăng xuất</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END HEADER  -->
+
+    
+
+    <!-- SIDER -->
+    <div class="body">
+      <div class="sider">
+        <div class="inner-menu">
+          <ul class="active-li">
+
+            <li class="active">
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html" style="color: white;">
+                TỔNG QUAN
+              </a>
+            </li>
+  
+            <li class="parent-item-exam exam"> 
+              <a href="#">
+                KỲ THI
+                <i class="fa-solid fa-chevron-down"
+                  id="icon-status"
+                  style="position: absolute; right: 15px">
+                </i>
+              </a>
+            </li>
+  
+            <li class="statistic"> 
+              <a href="#">THỐNG KÊ </a>
+            </li>
+
+            <li class="users"> 
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/index.html">SINH VIÊN </a>
+            </li>
+
+            <li> 
+              <a href="#">KẾT QUẢ </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- MAIN  -->
+        <div class="main">
+          <h1>Tổng quan</h1>
+
+          <div class="row mt-4"></div>
+
+          <div class="col-12">
+            <div class="card mb-4">
+              <div class="card-header"><b>Thông tin tài khoản</b></div>
+              <div class="card-body">
+                <img src="https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png" style="height: 100px;margin-bottom: 15px;"/>
+                
+                <p>Họ tên: <b>Le Van A</b></p>
+                <p>Email: <b> levana@gmail.com</b></p>
+                <p>Số điện thoại: <b>0123456789</b></p>
+                <p>Phân quyền: <b>Quản trị viên</b></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row" id="time-check">
+            <div class="col-6">
+              <div class="card mb-4">
+                <div class="card-header">
+                  <b>Danh sách kỳ thi</b>
+                  <span class="btn-exam">
+                    <a class="btn btn-light btn-sm create" href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/create.html">Thêm</a>
+                    <a class="btn btn-light btn-sm" href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/edit.html">Sửa </a>
+                    <a class="btn btn-light btn-sm" href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/delete.html">Xoá </a>
+                  </span>
+                </div>
+
+                <div class="card-body">
+                  <p>Số lượng: <b>3</b></p>
+                  <p>Hoạt động: <b>3</b></p>
+                  <p>Dừng hoạt động: <b>0</b></p>
+                </div>
+
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="card mb-4">
+                <div class="card-header">
+                  <b>Danh sách sinh viên</b>
+                  <span class="btn-exam">
+                    <a class="btn btn-light btn-sm create" href="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/create.html">Thêm</a>
+                    <a class="btn btn-light btn-sm" href="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/edit.html">Sửa </a>
+                    <a class="btn btn-light btn-sm" href="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/delete.html">Xoá </a>
+                  </span>
+                </div>
+                <div class="card-body">
+                  <p>Số lượng: <b>60</b></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="card mb-4">
+                <div class="card-header" id="statistic-chart"><b>Thống kê</b></div>
+
+                
+                <div class="card-body">
+
+                  <div class="column-chart">
+                    <div class="chart-serie" style="--i: 70%;--color: #9142df">
+                      <h6 class="chart-title">70%</h6>
+                    </div>
+                
+                    <div class="chart-serie" style="--i: 20%;--color: #42df68">
+                      <h6 class="chart-title">20%</h6>
+                    </div>
+                
+                    <div class="chart-serie" style="--i: 10%;--color: #e2d750">
+                      <h6 class="chart-title">10%</h6>
+                    </div>
+                  </div>
+
+                  <ul class="list-col">
+                    <li><b>Tham gia</b><span style="background-color:#e6425e;"></span></li>
+                    <li><b>Không tham gia</b><span style="background-color:#12b0e8;"></span></li>
+                    <li><b>Khác</b><span style="background-color:#5a20cb;"></span></li>
+                  </ul>
+
+                  <div class="chart-wrap">
+                    <figure class="pie-chart"
+                      style="background: conic-gradient(
+                        from 0deg,
+                        #CC0D00 0,
+                        #CC0D00 calc(80%),
+
+                        #c8cfd6 calc(80%),
+                        #c8cfd6 calc(80% + 20%)
+                      )">
+                    </figure>
+
+                    <div class="chart-info">
+                      <h6>Tỷ lệ hoàn thành</h6>
+                      <ul>
+                        <li>Hoàn thành: 80% <span style="background-color:#CC0D00;"></span></li>
+                        <li>Không hoàn thành: 20% <span style="background-color:#c8cfd6;"></span></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="chart-wrap">
+                    <figure class="pie-chart"
+                      style="background: conic-gradient(
+                        from 0deg,
+                        #CC0D00 0,
+                        #CC0D00 calc(70%),
+
+                        #c8cfd6 calc(70%),
+                        #c8cfd6 calc(70% + 30%)
+                      )">
+                    </figure>
+
+                    <div class="chart-info">
+                      <h6>Điểm trung bình</h6>
+                      <ul>
+                        <li>Trên 5: 70% <span style="background-color:#CC0D00;"></span></li>
+                        <li>Dưới 5: 30% <span style="background-color:#c8cfd6;"></span></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      <!-- END MAIN  -->
+
+    </div>
+    <!-- END SIDER -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/dashboard.js"></script>
+  </body>
+</html>
