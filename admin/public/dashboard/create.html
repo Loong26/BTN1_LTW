@@ -12,6 +12,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -140,9 +142,19 @@
               </div>
             </div>
 
+            
             <div class="button-add">
               <a class="btn btn-outline-success button-add" href="#">+ Thêm mới câu hỏi</a>
             </div>
+
+            <div class="button-add">
+              <a class="btn btn-outline-success button-add-file" href="#">Nhập đề thi từ file excel </a>
+            </div>
+            <form enctype="multipart/form-data">
+              <input id="excel_file" type="file" name="files[]" />
+              <br />
+              <br />
+            </form>
 
             <div class="form-group button-submit">
               <button class="btn btn-primary button-submit" type="submit">Tạo mới</button>
