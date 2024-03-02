@@ -86,6 +86,19 @@ const innerQuestion = (TT, Content, A, B, C, D) => {
   formCreate.insertBefore(div, buttonAdd);
 };
 
+const deleteQuestion = () => {
+  const formQuestion = document.querySelectorAll("#form-create-product .form-question");
+  const buttonDel = document.querySelectorAll("#form-create-product .form-question .button-delete");
+
+  if(buttonDel) {
+    buttonDel.forEach((button, index) => {
+      button.addEventListener("click", (e) => {
+        formQuestion[index].remove();
+      });
+    });
+  }
+};
+
 const buttonAdd = document.querySelector(".button-add");
 if(buttonAdd) {
   buttonAdd.addEventListener("click", (e) => {
@@ -94,16 +107,7 @@ if(buttonAdd) {
     innerQuestion(1, "", "", "", "", "");
 
   // delete question
-    const formQuestion = document.querySelectorAll("#form-create-product .form-question");
-    const buttonDel = document.querySelectorAll("#form-create-product .form-question .button-delete");
-
-    if(buttonDel) {
-      buttonDel.forEach((button, index) => {
-        button.addEventListener("click", (e) => {
-          formQuestion[index].remove();
-        });
-      });
-    }
+    deleteQuestion();
   // end delete question
   });
 }
@@ -130,6 +134,10 @@ const ExcelToJSON = function () {
         const productList = JSON.parse(json_object);
         productList.forEach((item) => {
           innerQuestion(parseInt(item.TT), item.Content, item.A, item.B, item.C, item.D);
+
+          // delete question
+          deleteQuestion();
+          // end delete question
         });
       });
     };

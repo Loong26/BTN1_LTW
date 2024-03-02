@@ -116,8 +116,12 @@
             </div>
 
             <div class="form-group" upload-image="upload-image">
-              <label for="thumbnail">Ảnh</label>
+              <label for="thumbnail"><b>Ảnh</b></label>
               <input class="form-control-file" type="file" id="thumbnail" name="thumbnail" accept="image/*" upload-image-input="upload-image-input"/><img class="image-preview" src="" upload-image-preview="upload-image-preview"/>
+            </div>
+
+            <div>
+              <label for="desc"><b>Thời gian</b></label>
             </div>
 
             <div class="form-group form-check form-check-inline">
@@ -147,14 +151,13 @@
               <a class="btn btn-outline-success button-add" href="#">+ Thêm mới câu hỏi</a>
             </div>
 
-            <div class="button-add">
-              <a class="btn btn-outline-success button-add-file" href="#">Nhập đề thi từ file excel </a>
-            </div>
             <form enctype="multipart/form-data">
-              <input id="excel_file" type="file" name="files[]" />
-              <br />
-              <br />
+              <div class="custom-file" style="max-width: 300px; margin-bottom: 10px;">
+                <input type="file" class="custom-file-input" id="excel_file" name="files[]" />
+                <label class="custom-file-label" for="excel_file">Nhập đề thi từ file excel</label>
+              </div>
             </form>
+          
 
             <div class="form-group button-submit">
               <button class="btn btn-primary button-submit" type="submit">Tạo mới</button>
