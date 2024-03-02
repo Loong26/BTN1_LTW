@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Thống kê</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!-- HEADER  -->
+    <header class="header"> 
+      <div class="container-fluid"> 
+        <div class="row align-items-center"> 
+
+          <div class="col-3"> 
+            <div class="inner-logo">
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html">
+                <img src="https://slink.ptit.edu.vn/favicon.ico" alt="logo">
+                <span id="admin-text">ADMIN</span>
+              </a> 
+            </div>
+          </div>
+
+          <div class="col-9">
+            <div class="text-right">
+              <a href="/my-account" class="btn btn-light btn-sm mr-2" id="username">Le Van A</a>
+
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/login.html" class="btn btn-danger btn-sm mr-2" id="logout">Đăng xuất</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- END HEADER  -->
+
+    
+
+    <!-- SIDER -->
+    <div class="body">
+      <div class="sider">
+        <div class="inner-menu">
+          <ul class="active-li">
+
+            <li>
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html">
+                TỔNG QUAN
+              </a>
+            </li>
+  
+            <li class="parent-item-exam exam"> 
+              <a href="#">
+                KỲ THI
+                <i class="fa-solid fa-chevron-down"
+                  id="icon-status"
+                  style="position: absolute; right: 15px">
+                </i>
+              </a>
+            </li>
+  
+            <li class="statistic active"> 
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/statistic/index.html" style="color: white;">THỐNG KÊ </a>
+            </li>
+
+            <li class="users"> 
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/index.html">SINH VIÊN </a>
+            </li>
+
+            <li> 
+              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/result/index.html">KẾT QUẢ </a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+      <!-- MAIN  -->
+        <div class="main">
+          <h1>Thống kê</h1>
+
+          <div class="card mb-3"> 
+            <div class="card-header"><b>Bộ lọc</b></div>
+            <div class="card-body"> 
+              <div class="row"> 
+                <div class="col-6">
+                  <div sort="sort">
+
+                    <select class="form-control" name="sort" sort-select="sort-select">
+                      <option value="all" selected>Tất cả</option>
+
+                      <option value="exam">Kỳ thi</option>
+                      
+                      <option value="date">Ngày tháng</option>
+                    </select>
+
+                  </div>
+
+                  <div id="button-exam" class="time-hidden" style="margin-top: 10px;">
+                    <button class="btn btn-sm ml-1 btn-outline-success active" button-option-exam = "button-option-exam">
+                      Giữa kỳ
+                    </button>
+
+                    <button class="btn btn-sm ml-1 btn-outline-success" button-option-exam = "button-option-exam">
+                      Cuối kỳ
+                    </button>
+                    
+                    <button class="btn btn-sm ml-1 btn-outline-success" button-option-exam = "button-option-exam">
+                      Khác
+                    </button>
+
+                  </div>
+
+                  <div class="row time-hidden" id="time-check" style="margin-top: 10px;">
+                    <div class="form-group col-6">
+                      <label for="subject"><b>Thời gian bắt đầu</b></label>
+                      <input class="form-control" type="datetime-local" id="time-start" name="time-start"/>
+                    </div>
+        
+                    <div class="form-group col-6">
+                      <label for="subject"><b>Thời gian kết thúc</b></label>
+                      <input class="form-control" type="datetime-local" id="time-finish" name="time-finish"/>
+                    </div>
+                  </div>
+
+                </div>
+                
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="row">
+
+            <div class="col-12">
+              <div class="card mb-4">
+                <div class="card-header text-center">
+                  <b>Tổng số lần tham gia</b>
+                </div>
+
+                <div class="card-body text-center">
+                  <div class="chart-wrap" style="margin-left: 0;">
+                    <ul>
+                      <li style="list-style: none;"><b>Trắc nghiệm HTML:</b> 
+                        <span style="color: red;"><b>350</b>/<b>1000</b> = <b style="color: red;">35%</b></span>
+                        <span style="background-color:#cc0e0081;"></span>
+                      </li>
+
+                      <br>
+
+                      <li style="list-style: none;"><b>Kiểm tra giữa kì:</b> 
+                        <span style="color: red;"><b>250</b>/<b>1000</b> = <b style="color: red;">25%</b></span>
+                        <span style="background-color:#cc0e0081;"></span>
+                      </li>
+
+                      <br>
+
+                      <li style="list-style: none;"><b>Kiểm tra bổ sung:</b> 
+                        <span style="color: red;"><b>300</b>/<b>1000</b> = <b style="color: red;">30%</b></span>
+                        <span style="background-color:#cc0e0081;"></span>
+                      </li>
+
+                      <br>
+
+                      <li style="list-style: none;"><b>Kiểm tra lý thuyết phân mảnh:</b> 
+                        <span style="color: red;"><b>100</b>/<b>1000</b> = <b style="color: red;">10%</b></span>
+                        <span style="background-color:#cc0e0081;"></span>
+                      </li>
+                    </ul>
+                    <br>
+                    
+                  </div>
+                  <div class="chart-wrap" style="margin-top: 10px;">
+                    <figure class="pie-chart"
+                      style="background: conic-gradient(
+                        from 0deg,
+                        #cc0e0081 0,
+                        #cc0e0081 calc(35%),
+
+                        #c8cfd6 calc(35%),
+                        #c8cfd6 calc(35% + 25%),
+
+                        #FF6E39 calc(35% + 25%),
+                        #FF6E39 calc(35% + 25% + 30%),
+
+                        #8536cb52 calc(35% + 25% + 30%),
+                        #8536cb52 calc(35% + 25% + 30% + 10%)
+                      ); width: 120px; height: 120px;">
+                    </figure>
+
+                    <div class="chart-info">
+                      <ul>
+                        <li><span style="background-color:#cc0e0081;"></span>&nbsp;<b>Trắc nghiệm HTML</b></li>
+                        <li><span style="background-color:#c8cfd6;"></span>&nbsp;<b>Kiểm tra giữa kì</b></li>
+                        <li><span style="background-color:#FF6E39;"></span>&nbsp;<b>Kiểm tra bổ sung</b></li>
+                        <li><span style="background-color:#8536cb52;"></span>&nbsp;<b>Kiểm tra lý thuyết phân mảnh</b></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-6">
+              <div class="card mb-4">
+                <div class="card-header text-center" id="statistic-chart">
+                  <b>Tỷ lệ hoàn thành & Điểm trung
+                  bình</b>
+                </div>
+
+                <div class="card-body">
+                  <div class="chart-wrap">
+                    <figure class="pie-chart"
+                      style="background: conic-gradient(
+                        from 0deg,
+                        #CC0D00 0,
+                        #CC0D00 calc(80%),
+
+                        #c8cfd6 calc(80%),
+                        #c8cfd6 calc(80% + 20%)
+                      );  width: 120px; height: 120px;">
+                    </figure>
+
+                    <div class="chart-info">
+                      <h6>Tỷ lệ hoàn thành</h6>
+                      <ul>
+                        <li>Hoàn thành: 80% <span style="background-color:#CC0D00;"></span></li>
+                        <li>Không hoàn thành: 20% <span style="background-color:#c8cfd6;"></span></li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div class="chart-wrap">
+                    <figure class="pie-chart"
+                      style="background: conic-gradient(
+                        from 0deg,
+                        #CC0D00 0,
+                        #CC0D00 calc(70%),
+
+                        #c8cfd6 calc(70%),
+                        #c8cfd6 calc(70% + 30%)
+                      ); width: 120px; height: 120px;">
+                    </figure>
+
+                    <div class="chart-info">
+                      <h6>Điểm trung bình</h6>
+                      <ul>
+                        <li>Trên 5: 70% <span style="background-color:#CC0D00;"></span></li>
+                        <li>Dưới 5: 30% <span style="background-color:#c8cfd6;"></span></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-6">
+              <div class="card mb-4">
+                <div class="card-header text-center" id="statistic-chart">
+                  <b>Phân phối điểm số</b>
+                </div>
+
+                <div class="card-body">
+                  <canvas id="histogram-chart" width="200" height="150"></canvas>
+                </div>
+
+                
+              </div>
+            </div>
+
+          </div>
+        </div>
+      <!-- END MAIN  -->
+
+    </div>
+    <!-- END SIDER -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../../js/script.js"></script>
+    <script src="../../js/statistic.js"></script>
+  </body>
+</html>
