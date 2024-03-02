@@ -81,3 +81,55 @@ if(loginForm) {
   });
 }
 // end login
+
+// upload image 
+const uploadImage = document.querySelector("[upload-image]");
+if(uploadImage) {
+  const uploadImageInput = document.querySelector("[upload-image-input]");
+  const uploadImagePreview = document.querySelector("[upload-image-preview]");
+
+  uploadImageInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if(file) {
+      uploadImagePreview.src = URL.createObjectURL(file);
+    }
+  });
+}
+// end upload image 
+
+// delete all 
+const checkboxMulti = document.querySelector(`[checkbox-multi]`);
+
+if(checkboxMulti){
+  const inputCheckAll = checkboxMulti.querySelector("input[name='checkall']");
+  const inputsID = checkboxMulti.querySelectorAll("input[name='id']");
+
+  inputCheckAll.addEventListener("click", () => {
+    if(inputCheckAll.checked){
+      inputsID.forEach(input => {
+        input.checked = true;
+      });
+    }
+    else{
+      inputsID.forEach(input => {
+        input.checked = false;
+      });
+    }
+  });
+
+  inputsID.forEach(input => {
+    input.addEventListener("click", () => {
+      const countChecked = checkboxMulti.querySelectorAll(
+        "input[name='id']:checked"
+      ).length;
+
+      if(countChecked == inputsID.length){
+        inputCheckAll.checked = true;
+      }
+      else{
+        inputCheckAll.checked = false;
+      }
+    });
+  });
+}
+// end delete all 

@@ -84,7 +84,7 @@
         <div class="main">
           <h1 class="mb-4">Tạo mới sinh viên</h1>
 
-          <form action="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html" id="form-create-product" method="GET" enctype="multipart/form-data">
+          <form action="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/index.html" id="form-create-product" method="GET" enctype="multipart/form-data">
 
             <div class="form-group">
               <label for="title"><b>Tên sinh viên</b></label>
@@ -99,6 +99,16 @@
             <div class="form-group">
               <label for="clsr"><b>Lớp</b></label>
               <input class="form-control" type="text" id="clsr" name="clsr" required="required"/>
+            </div>
+
+            <div class="form-group">
+              <label for="email"><b>Email</b></label>
+              <input class="form-control" type="email" id="email" name="email" required="required"/>
+            </div>
+
+            <div class="form-group" upload-image="upload-image">
+              <label for="avatar"><b>Avatar</b></label>
+              <input class="form-control-file" type="file" id="avatar" name="avatar" accept="image/*" upload-image-input="upload-image-input"/><img class="image-preview" src="" upload-image-preview="upload-image-preview"/>
             </div>
 
             <div class="form-group">

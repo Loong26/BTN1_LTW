@@ -169,6 +169,12 @@
   color: #fff;
   font-size: 17px;
 }
+
+.card-header.edit-exam{
+  background: white;
+
+}
+
 .chart-wrap{
   display: inline-block;
   margin-left: 20px;
@@ -288,5 +294,90 @@
 .form-question ul li {
   margin-bottom: 10px;
   list-style: none;
+}
+
+#popup {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#popup1 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#popup2 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#popup3 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#popup4 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
 }
 /* end main  */

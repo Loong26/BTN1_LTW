@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Chỉnh sửa kì thi</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../css/style.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.15.1/xlsx.full.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
     <!-- HEADER  -->
-    <header class="header"> 
-      <div class="container-fluid"> 
-        <div class="row align-items-center"> 
-
-          <div class="col-3"> 
+    <header class="header">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-3">
             <div class="inner-logo">
               <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html">
-                <img src="https://slink.ptit.edu.vn/favicon.ico" alt="logo">
+                <img src="https://slink.ptit.edu.vn/favicon.ico" alt="logo" />
                 <span id="admin-text">ADMIN</span>
-              </a> 
+              </a>
             </div>
           </div>
 
           <div class="col-9">
             <div class="text-right">
-              <a href="/my-account" class="btn btn-light btn-sm mr-2" id="username">Le Van A</a>
+              <a
+                href="/my-account"
+                class="btn btn-light btn-sm mr-2"
+                id="username"
+                >Le Van A</a
+              >
 
-              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/login.html" class="btn btn-danger btn-sm mr-2" id="logout">Đăng xuất</a>
+              <a
+                href="http://127.0.0.1:5500/BTN1_LTW/admin/public/login.html"
+                class="btn btn-danger btn-sm mr-2"
+                id="logout"
+                >Đăng xuất</a
+              >
             </div>
           </div>
         </div>
@@ -41,66 +52,286 @@
     </header>
     <!-- END HEADER  -->
 
-
     <!-- SIDER -->
     <div class="body">
       <div class="sider">
         <div class="inner-menu">
           <ul class="active-li">
-
             <li>
               <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html">
                 TỔNG QUAN
               </a>
             </li>
-  
-            <li class="parent-item-exam exam"> 
+
+            <li class="parent-item-exam exam">
               <a href="#">
                 KỲ THI
-                <i class="fa-solid fa-chevron-down"
+                <i
+                  class="fa-solid fa-chevron-down"
                   id="icon-status"
-                  style="position: absolute; right: 15px">
+                  style="position: absolute; right: 15px"
+                >
                 </i>
               </a>
             </li>
 
             <ul id="item-exam">
-              <li> 
-                <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/create.html"> Tạo kỳ thi </a>
+              <li>
+                <a
+                  href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/create.html"
+                >
+                  Tạo kỳ thi
+                </a>
               </li>
-              <li class="active"> 
-                <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/edit.html" style="color: white;"> Sửa kì thi </a>
+              <li class="active">
+                <a
+                  href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/edit.html"
+                  style="color: white"
+                >
+                  Sửa kì thi
+                </a>
               </li>
-              <li> 
-                <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/delete.html" style="background: black";> Xoá kì thi </a>
+              <li>
+                <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/delete.html">
+                  Xoá kì thi
+                </a>
               </li>
             </ul>
-  
-            <li class="statistic"> 
+
+            <li class="statistic">
               <a href="#">THỐNG KÊ </a>
             </li>
 
-            <li class="users"> 
-              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/index.html">SINH VIÊN </a>
+            <li class="users">
+              <a
+                href="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/index.html"
+                >SINH VIÊN
+              </a>
             </li>
 
-            <li> 
+            <li>
               <a href="#">KẾT QUẢ </a>
             </li>
-
           </ul>
         </div>
       </div>
 
       <!-- MAIN  -->
-        <div class="main">
-          <h1 class="mb-4">Chỉnh sửa kì thi</h1>
 
+      <div class="main">
+        <h1 class="mb-4">Chỉnh sửa kì thi</h1>
+
+        <div class="card mb-3">
+          <div class="card-header edit-exam">
+            <div style="color: black;">Danh sách</div>
+            <div class="card-body">
+              <table
+                class="table table-hover table-sm"
+                checkbox-multi="checkbox-multi">
+
+                <thead>
+                  <tr>
+                    <th>STT</th>
+                    <th>Hình ảnh</th>
+                    <th>Tên kỳ thi</th>
+                    <th>Tên môn</th>
+                    <th>Thời gian</th>
+                    <th>Người tạo</th>
+                    <th>Người cập nhật</th>
+                    <th>Hành động</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td><img src="https://d1iv5z3ivlqga1.cloudfront.net/wp-content/uploads/2023/10/30114934/Huyen-A%CC%89nh-bi%CC%80a-blog-2023-10-30T114925.545-1024x576.png" alt="img-subject" width="100px" /></td>
+                    <td>Trắc nghiệm HTML</td>
+                    <td>Lập trình web</td>
+                    
+                    <td>
+                      <a class="badge badge-danger" href="#">Tự do</a>
+                    </td>
+                    <td>
+                      <p>Nguyễn Đức Anh</p>
+                    </td>
+                    <td>
+                      <p>Nguyễn Đức Anh</p>
+                    </td>
+                    <td>
+                      <a class="btn btn-warning btn-sm" href="#" style="width: 70px;" onclick="showPopup()">Sửa</a>
+                    </td>
+                  </tr>
+
+                  <div id="popup" style="display: none;">
+
+                    <div class="form-group">
+                      <label for="title"><b>Tên kỳ thi</b></label>
+                      <input class="form-control" type="text" id="title" name="title" value="Trắc nghiệm HTML" required="required"/>
+                    </div>
+        
+                    <div class="form-group">
+                      <label for="subject"><b>Tên môn</b></label>
+                      <input class="form-control" type="text" id="subject" name="subject"  value="Lập trình web" required="required"/>
+                    </div>
+        
+                    <div class="form-group">
+                      <label for="desc"><b>Mô tả</b></label>
+                      <textarea class="form-control textarea-mce" id="desc" name="description" rows="5"></textarea>
+                    </div>
+        
+                    <div class="form-group" upload-image="upload-image">
+                      <label for="thumbnail"><b>Ảnh</b></label>
+                      <input class="form-control-file" type="file" id="thumbnail" name="thumbnail" accept="image/*" upload-image-input="upload-image-input"/><img class="image-preview" src="https://d1iv5z3ivlqga1.cloudfront.net/wp-content/uploads/2023/10/30114934/Huyen-A%CC%89nh-bi%CC%80a-blog-2023-10-30T114925.545-1024x576.png" upload-image-preview="upload-image-preview"/>
+                    </div>
+        
+                    <div>
+                      <label for="desc"><b>Thời gian</b></label>
+                    </div>
+        
+                    <div class="form-group form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="status" value="active" checked="checked"/>
+                      <label class="form-check-label" for="statusActive">Tự do</label>
+                    </div>
+        
+                    <div class="form-group form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="status" value="inactive"/>
+                      <label class="form-check-label" for="statusInactive">Thời gian cụ thể</label>
+                    </div>
+                    
+                    <div class="row time-hidden" id="time-check">
+                      <div class="form-group col-3">
+                        <label for="subject"><b>Thời gian bắt đầu</b></label>
+                        <input class="form-control" type="datetime-local" id="time-start" name="time-start"/>
+                      </div>
           
-          
+                      <div class="form-group col-3">
+                        <label for="subject"><b>Thời gian kết thúc</b></label>
+                        <input class="form-control" type="datetime-local" id="time-finish" name="time-finish"/>
+                      </div>
+                    </div>
+
+                    <div class="form-question">
+                      <div class="form-group col-12">
+                        <label for="desc"><b>Mô tả</b></label>
+                        <div>
+                          <b>Câu hỏi số:</b> <input type="number" min="1" value=1 required>
+                        </div>
+                        <textarea class="form-control textarea-mce" id="desc" name="description" value= rows="5">Nội dung câu hỏi 1...</textarea>
+                      </div>
+                      <ul>
+                        <li><input type="checkbox" checked><b>A</b> <input type="text" value=AAAA></li>
+                        <li><input type="checkbox"><b>B</b> <input type="text" value=BBBB></li>
+                        <li><input type="checkbox"><b>C</b> <input type="text" value=CCCC></li>
+                        <li><input type="checkbox"><b>D</b> <input type="text" value=DDDD></li>
+                      </ul>
+                      <a class="btn btn-danger btn-sm mr-2 button-delete" style="margin-left: 1020px; margin-bottom: 5px;">Xoá</a>
+                    </div>
+        
+                    <div class="button-add">
+                      <a class="btn btn-outline-danger button-add" href="#">+ Thêm mới câu hỏi</a>
+                    </div>
+        
+                    <form enctype="multipart/form-data">
+                      <div class="custom-file" style="max-width: 300px; margin-bottom: 10px;">
+                        <input type="file" class="custom-file-input" id="excel_file" name="files[]" />
+                        <label class="custom-file-label" for="excel_file">Nhập đề thi từ file excel</label>
+                      </div>
+                    </form>
+                    
+                    <div>
+                      <a href="#" class="btn btn-primary btn-sm" onclick="closePopup()">Cập nhật</a>
+                    </div>
+                  </div>
+
+
+                  <tr>
+                    <td>2</td>
+                    <td><img src="https://www.ibm.com/content/dam/connectedassets-adobe-cms/worldwide-content/stock-assets/getty/image/photography/6b/88/dsc02281-edit-edit-5-edit.component.xl.ts=1709121583626.jpg/content/adobe-cms/us/en/topics/ai-hallucinations/_jcr_content/root/leadspace" alt="img-subject" width="100px" /></td>
+                    <td>Kiểm tra giữa kì</td>
+                    <td>Nhập môn trí tuệ nhân tạo</td>
+                    
+                    <td>
+                      <a
+                        class="badge badge-success"
+                        href="#"
+                        >22/03/2024</a
+                      >
+                    </td>
+                    <td>
+                      <p>Vũ Bảo Long</p>
+                    </td>
+                    <td>
+                      <p>Vũ Bảo Long</p>
+                    </td>
+                    <td>
+                      <a class="btn btn-warning btn-sm" href="#" style="width: 70px;" onclick="showPopup()">Sửa </a>
+                      
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td>3</td>
+                    <td><img src="https://nentang.vn/wp-content/uploads/2018/07/html-css-js-course-intro.jpeg" alt="img-subject" width="100px" /></td>
+                    <td>Kiểm tra bổ sung</td>
+                    <td>Lập trình web</td>
+                    
+                    <td>
+                      <a
+                        class="badge badge-success"
+                        href="#"
+                        >22-23/03/2024</a
+                      >
+                      
+                    </td>
+                    <td>
+                      <p>Kiều Linh Trang</p>
+                    </td>
+                    <td>
+                      <p>Kiều Linh Trang</p>
+                    </td>
+                    <td>
+                      <a class="btn btn-warning btn-sm" href="#" style="width: 70px;" onclick="showPopup()">Sửa </a>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <td>4</td>
+                    <td><img src="https://www.boardinfinity.com/blog/content/images/2022/11/DistributedDataBlog-1-1024x683.png" alt="img-subject" width="100px" /></td>
+                    <td>Kiểm tra lý thuyết phân mảnh</td>
+                    <td>Cơ sở dữ liệu phân tán</td>
+                    
+                    <td>
+                      <a
+                        class="badge badge-success"
+                        href="javascript:;"
+                        data-status=""
+                        data-id=""
+                        button-change-status="button-change-status"
+                        >Tự do</a
+                      >
+                    </td>
+                    <td>
+                      <p>Lương Ngọc Yên</p>
+                    </td>
+                    <td>
+                      <p>Lương Ngọc Yên</p>
+                    <td>
+                      <a class="btn btn-warning btn-sm" href="#" style="width: 70px;" onclick="showPopup()">Sửa </a>
+                    </td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
-      <!-- END MAIN  -->
+      </div>
 
+      <!-- END MAIN  -->
     </div>
     <!-- END SIDER -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>

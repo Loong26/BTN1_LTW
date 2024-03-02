@@ -173,8 +173,40 @@ if(excelFile) {
 }
 
 document.getElementById("excel_file").addEventListener("change", handleFileSelect, false);
-
 // end import excel file
 
+// submit
+const buttonSubmit = document.querySelector("#button-submit");
+if(buttonSubmit) {
+  buttonSubmit.addEventListener("click", (e) => {
+    const title = document.querySelector(`input[name="title"]`);
+    if(title.value == "") {
+      alert("Vui lòng nhập tên kỳ thi!");
+      return;
+    }
 
+    const subject = document.querySelector(`input[name="subject"]`);
+    if(subject.value == "") {
+      alert("Vui lòng nhập tên môn!");
+      return;
+    }
 
+    window.location.href = "http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html";
+  });
+}
+// end submit
+
+// upload image 
+const uploadImage = document.querySelector("[upload-image]");
+if(uploadImage) {
+  const uploadImageInput = document.querySelector("[upload-image-input]");
+  const uploadImagePreview = document.querySelector("[upload-image-preview]");
+
+  uploadImageInput.addEventListener("change", (e) => {
+    const file = e.target.files[0];
+    if(file) {
+      uploadImagePreview.src = URL.createObjectURL(file);
+    }
+  });
+}
+// end upload image 

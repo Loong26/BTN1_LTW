@@ -84,6 +84,305 @@
       <!-- MAIN  -->
         <div class="main">
           <h1>Danh sách sinh viên</h1>
+
+          <div class="card mb-3">
+            <div class="card-header edit-exam" style="color: black;">Danh sách</div>
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-8"></div>
+                  <div class="col-4 text-right">
+                    <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/users/create.html" class="btn btn-outline-primary" style="margin-right: 25px; width: 120px; margin-bottom: 10px;">+ Thêm mới</a>
+                    
+                    <a href="#" class="btn btn-outline-danger" style="margin-right: 25px; width: 70px; margin-bottom: 10px;">Xoá</a>
+                  </div>
+                  
+                </div>
+                <table
+                  class="table table-hover table-sm"
+                  checkbox-multi="checkbox-multi">
+  
+                  <thead>
+                    <tr>
+                      <th>
+                        <input type="checkbox" name="checkall" />
+                      </th>
+                      <th>STT</th>
+                      <th>Avatar</th>
+                      <th>Họ và tên</th>
+                      <th>Mã sinh viên</th>
+                      <th>Lớp</th>
+                      <th>Email</th>
+                      <th>Hình thức đào tạo</th>
+                      <th>Hành động</th>
+                    </tr>
+                  </thead>
+  
+                  <tbody>
+                    <tr>
+                      <td><input type="checkbox" name="id" value="" /></td>
+                      <td>1</td>
+                      <td><img src="https://w7.pngwing.com/pngs/578/405/png-transparent-computer-icons-person-avatar-heroes-logo-silhouette.png" alt="img-subject" width="100px" /></td>
+                      <td>Nguyễn Đức Anh</td>
+                      <td>B21DCCN001</td>
+                      <td>D21CQCN07-B</td>
+                      <td><p>anh@gmail.com</p></td>
+                      <td><a class="badge badge-success" href="#">Chính quy</a></td>
+                      <td>
+                        <a class="btn btn-primary btn-sm" href="#" style="width: 50px;" onclick="showPopup1()">Sửa </a>
+                        <a class="btn btn-danger btn-sm" href="#" style="width: 50px;">Xoá </a>
+                      </td>
+                    </tr>
+
+                    <div id="popup1" style="display: none;">
+                      <div class="form-group">
+                        <label for="title"><b>Tên sinh viên</b></label>
+                        <input class="form-control" type="text" id="title" name="title" required="required" value="Nguyễn Đức Anh"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="id"><b>Mã sinh viên</b></label>
+                        <input class="form-control" type="text" id="id" name="id" required="required" value="B21DCCN001"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="clsr"><b>Lớp</b></label>
+                        <input class="form-control" type="text" id="clsr" name="clsr" required="required" value="D21CQCN07-B"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input class="form-control" type="email" id="email" name="email" required="required" value="anh@gmail.com"/>
+                      </div>
+          
+                      <div class="form-group" upload-image="upload-image">
+                        <label for="avatar"><b>Avatar</b></label>
+                        <input class="form-control-file" type="file" id="avatar" name="avatar" accept="image/*" upload-image-input="upload-image-input"/><img class="image-preview" src="https://w7.pngwing.com/pngs/578/405/png-transparent-computer-icons-person-avatar-heroes-logo-silhouette.png" upload-image-preview="upload-image-preview"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <div><label for="exam_model"><b>Hình thức đào tạo:</b></label></div>
+                        <div class="form-group form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="featured1" name="featured1" value="1" checked="checked"/>
+                          <label class="form-check-label" for="featured1">Chính quy</label>
+                        </div>
+                        <div class="form-group form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="featured0" name="featured1" value="0" />
+                          <label class="form-check-label" for="featured0">Vừa học vừa làm</label>
+                        </div>
+                      </div>
+
+                      <div>
+                        <a href="#" class="btn btn-primary btn-sm" onclick="closePopup1()">Cập nhật</a>
+                      </div>
+                    </div>
+  
+  
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="id" value="" />
+                      </td>
+                      <td>2</td>
+                      <td><img src="https://w7.pngwing.com/pngs/578/405/png-transparent-computer-icons-person-avatar-heroes-logo-silhouette.png" alt="img-subject" width="100px" /></td>
+                      <td>Vũ Bảo Long</td>
+                      <td>B21DCCN002</td>
+                      
+                      <td>
+                        D21CQCN08-B
+                      </td>
+                      <td>
+                        <p>long@gmail.com</p>
+                      </td>
+                      <td>
+                        <a class="badge badge-success" href="#">Chính quy</a>
+                      </td>
+                      <td>
+                        <a class="btn btn-primary btn-sm" href="#" style="width: 50px;"onclick="showPopup2()">Sửa </a>
+                        <a class="btn btn-danger btn-sm" href="#" style="width: 50px;">Xoá </a>
+                      </td>
+                    </tr>
+
+                    <div id="popup2" style="display: none;">
+                      <div class="form-group">
+                        <label for="title"><b>Tên sinh viên</b></label>
+                        <input class="form-control" type="text" id="title" name="title" required="required" value="Vũ Bảo Long"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="id"><b>Mã sinh viên</b></label>
+                        <input class="form-control" type="text" id="id" name="id" required="required" value="B21DCCN002"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="clsr"><b>Lớp</b></label>
+                        <input class="form-control" type="text" id="clsr" name="clsr" required="required" value="D21CQCN08-B"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input class="form-control" type="email" id="email" name="email" required="required" value="long@gmail.com"/>
+                      </div>
+          
+                      <div class="form-group" upload-image="upload-image">
+                        <label for="avatar"><b>Avatar</b></label>
+                        <input class="form-control-file" type="file" id="avatar" name="avatar" accept="image/*" upload-image-input="upload-image-input"/><img class="image-preview" src="https://w7.pngwing.com/pngs/578/405/png-transparent-computer-icons-person-avatar-heroes-logo-silhouette.png" upload-image-preview="upload-image-preview"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <div><label for="exam_model"><b>Hình thức đào tạo:</b></label></div>
+                        <div class="form-group form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="featured1" name="featured2" value="1" checked="checked"/>
+                          <label class="form-check-label" for="featured1">Chính quy</label>
+                        </div>
+                        <div class="form-group form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="featured0" name="featured2" value="0" />
+                          <label class="form-check-label" for="featured0">Vừa học vừa làm</label>
+                        </div>
+                      </div>
+
+                      <div>
+                        <a href="#" class="btn btn-primary btn-sm" onclick="closePopup2()">Cập nhật</a>
+                      </div>
+                    </div>
+  
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="id" value="" />
+                      </td>
+                      <td>3</td>
+                      <td><img src="https://w7.pngwing.com/pngs/43/926/png-transparent-computer-icons-avatar-user-avatar-heroes-woman-silhouette.png" alt="img-subject" width="100px" /></td>
+                      <td>Kiều Linh Trang</td>
+                      <td>B21DCCN003</td>
+                      
+                      <td>
+                        D21CQCN08-B
+                      </td>
+                      <td>
+                        <p>trang@gmail.com</p>
+                      </td>
+                      <td>
+                        <a class="badge badge-success" href="#">Chính quy</a>
+                      </td>
+                      <td>
+                        <a class="btn btn-primary btn-sm" href="#" style="width: 50px;" onclick="showPopup3()">Sửa </a>
+                        <a class="btn btn-danger btn-sm" href="#" style="width: 50px;">Xoá </a>
+                      </td>
+                    </tr>
+
+                    <div id="popup3" style="display: none;">
+                      <div class="form-group">
+                        <label for="title"><b>Tên sinh viên</b></label>
+                        <input class="form-control" type="text" id="title" name="title" required="required" value="Kiều Linh Trang"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="id"><b>Mã sinh viên</b></label>
+                        <input class="form-control" type="text" id="id" name="id" required="required" value="B21DCCN003"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="clsr"><b>Lớp</b></label>
+                        <input class="form-control" type="text" id="clsr" name="clsr" required="required" value="D21CQCN08-B"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input class="form-control" type="email" id="email" name="email" required="required" value="trang@gmail.com"/>
+                      </div>
+          
+                      <div class="form-group" upload-image="upload-image">
+                        <label for="avatar"><b>Avatar</b></label>
+                        <input class="form-control-file" type="file" id="avatar" name="avatar" accept="image/*" upload-image-input="upload-image-input"/><img class="image-preview" src="https://w7.pngwing.com/pngs/43/926/png-transparent-computer-icons-avatar-user-avatar-heroes-woman-silhouette.png" upload-image-preview="upload-image-preview"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <div><label for="exam_model"><b>Hình thức đào tạo:</b></label></div>
+                        <div class="form-group form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="featured1" name="featured3" value="1" checked="checked"/>
+                          <label class="form-check-label" for="featured1">Chính quy</label>
+                        </div>
+                        <div class="form-group form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="featured0" name="featured3" value="0" />
+                          <label class="form-check-label" for="featured0">Vừa học vừa làm</label>
+                        </div>
+                      </div>
+
+                      <div>
+                        <a href="#" class="btn btn-primary btn-sm" onclick="closePopup3()">Cập nhật</a>
+                      </div>
+                    </div>
+  
+                    <tr>
+                      <td>
+                        <input type="checkbox" name="id" value="" />
+                      </td>
+                      <td>4</td>
+                      <td><img src="https://w7.pngwing.com/pngs/578/405/png-transparent-computer-icons-person-avatar-heroes-logo-silhouette.png" alt="img-subject" width="100px"/></td>
+                      <td>Lương Ngọc Yên</td>
+                      <td>B21DCCN004</td>
+                      
+                      <td>
+                        D21CQCN04-B
+                      </td>
+                      <td>
+                        <p>yen@gmail.com</p>
+                      </td>
+                      <td>
+                        <a class="badge badge-success" href="#">Chính quy</a>
+                      </td>
+                      <td>
+                        <a class="btn btn-primary btn-sm" href="#" style="width: 50px;" onclick="showPopup4()">Sửa </a>
+                        <a class="btn btn-danger btn-sm" href="#" style="width: 50px;">Xoá </a>
+                      </td>
+                    </tr>
+  
+                    <div id="popup4" style="display: none;">
+                      <div class="form-group">
+                        <label for="title"><b>Tên sinh viên</b></label>
+                        <input class="form-control" type="text" id="title" name="title" required="required" value="Lương Ngọc Yên"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="id"><b>Mã sinh viên</b></label>
+                        <input class="form-control" type="text" id="id" name="id" required="required" value="B21DCCN004"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="clsr"><b>Lớp</b></label>
+                        <input class="form-control" type="text" id="clsr" name="clsr" required="required" value="D21CQCN04-B"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <label for="email"><b>Email</b></label>
+                        <input class="form-control" type="email" id="email" name="email" required="required" value="yen@gmail.com"/>
+                      </div>
+          
+                      <div class="form-group" upload-image="upload-image">
+                        <label for="avatar"><b>Avatar</b></label>
+                        <input class="form-control-file" type="file" id="avatar" name="avatar" accept="image/*" upload-image-input="upload-image-input"/><img class="image-preview" src="https://w7.pngwing.com/pngs/578/405/png-transparent-computer-icons-person-avatar-heroes-logo-silhouette.png" upload-image-preview="upload-image-preview"/>
+                      </div>
+          
+                      <div class="form-group">
+                        <div><label for="exam_model"><b>Hình thức đào tạo:</b></label></div>
+                        <div class="form-group form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="featured1" name="featured4" value="1" checked="checked"/>
+                          <label class="form-check-label" for="featured1">Chính quy</label>
+                        </div>
+                        <div class="form-group form-check form-check-inline">
+                          <input class="form-check-input" type="radio" id="featured0" name="featured4" value="0" />
+                          <label class="form-check-label" for="featured0">Vừa học vừa làm</label>
+                        </div>
+                      </div>
+
+                      <div>
+                        <a href="#" class="btn btn-primary btn-sm" onclick="closePopup4()">Cập nhật</a>
+                      </div>
+                    </div>
+  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
 
       <!-- END MAIN  -->
@@ -94,5 +393,6 @@
 
     <script src="../../js/script.js"></script>
     <script src="../../js/dashboard.js"></script>
+    <script src="../../js/create.users.js"></script>
   </body>
 </html>
