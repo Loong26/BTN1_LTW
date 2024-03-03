@@ -1,0 +1,493 @@
+/* header */
+.header{
+  background: #001529;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.header .inner-logo a{
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.header a:hover{
+  text-decoration: none;
+  color: #CC0D00;
+}
+
+.header .inner-logo img{
+  height: 30px;
+  width: 30px;
+  display: inline;
+}
+
+#username{
+  color: red;
+  font-weight: 600;
+}
+
+#logout{
+  font-weight: 600;
+}
+
+#logout:hover{
+  color: white;
+}
+/* header */
+
+/* Body */
+.body .sider{
+  width: 150px;
+  background: #1E1D2F;
+  color: #fff;
+  height: calc(100vh - 56px);
+  position: fixed;
+  top: 56px;
+  left: 0;
+}
+
+.body .main{
+  margin: 15px;
+  position: relative;
+  left: 150px;
+  width: calc(100% - 180px);
+}
+
+@media only screen and (max-width: 1000px) {
+  #admin-text{
+    display: none;
+  }
+}
+/* End body */
+
+/* Sider */
+.sider .inner-menu ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sider .inner-menu  li a{
+  color: #919AA3;
+  /* color: white; */
+  display: block;
+  padding: 6px 10px;
+  margin-top: 12px;
+  /* border-bottom: 1px solid #515151; */
+}
+
+.sider {
+  height: 500px;
+  overflow: auto;
+}
+
+.active {
+  background-color: #CC0D00;
+  color: white;
+}
+
+.active a{
+  color: white;
+}
+
+.sider li a:hover{
+  text-decoration: none;
+  color: white;
+}
+
+.child-list {
+  position: absolute;
+  left: 10px;
+}
+
+#item-exam{
+  background-color: black;
+}
+/* End sider */
+
+/* Show alert */
+[show-alert] {
+  position: fixed;
+  top: 70px;
+  right: 15px;
+  z-index: 9999;
+}
+
+[show-alert].alert-hidden {
+  animation-name: alert-hidden;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes alert-hidden {
+  from {
+    right: 15px;
+  }
+  to {
+    right: -100%;
+    display: none;
+  }
+}
+
+[show-alert] [close-alert] {
+  background: #ffffffc4;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* End Show alert */
+
+/* Image preview */
+.image-preview {
+  width: 150px;
+  height: auto;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.image-preview[src=""] {
+  display: none;
+}
+/* End Image preview */
+
+/* main */
+
+  /* statistic */
+
+.card-header{
+  background-color: #CC0D00;
+  color: #fff;
+  font-size: 17px;
+}
+
+.card-header.edit-exam{
+  background: white;
+
+}
+
+.chart-wrap{
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 60px;
+  margin-top: 20px;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+
+.pie-chart{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #fff;
+  /* border: 0.2px solid #1E1D2F; */
+}
+
+.chart-info{
+  text-transform: capitalize;
+  font-size: 30px;
+}
+
+.chart-info ul{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.chart-info ul li{
+  margin-bottom: 10px;
+  font-size: 15px;
+  text-align: left;
+}
+
+.chart-info ul li span{
+  width: 20px;
+  height: 12px;
+  border-radius: 5px;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+.column-chart{
+  padding: 20px;
+  border-radius: 10px;
+  height: 200px;
+  width: 450px;
+  display: flex;
+  align-items: flex-end;
+  /* justify-content: space-between; */
+  gap: 20px;
+  background-color: #1E1D2F;
+}
+
+.list-col{
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.list-col li {
+  margin-left: 52px;
+}
+
+.list-col li span{
+  display: inline-block;
+}
+
+.chart-serie{
+  position: relative;
+  width: 60px;
+  border-radius: 3px;
+  background-color: var(--color);
+  transform-origin: bottom center;
+  animation: rise 1s linear forwards;
+  margin-left: 48px;
+}
+
+.chart-title{ 
+  text-align: center;
+  position: relative;
+  top: -25px;
+  color: #fff;
+}
+
+@keyframes rise { 
+  0%{
+    height: 0%;
+  }
+  100%{
+    height: var(--i);
+  }
+}
+
+.btn-exam a{
+  margin-left: 10px;
+}
+
+.time-hidden{
+  display: none;
+}
+
+.button-add {
+  margin-bottom: 10px;
+}
+
+.form-question {
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.form-question .form-group input{
+  margin-bottom: 10px;
+}
+
+.form-question ul li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+#popup {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#popup1 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#popup2 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#popup3 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#popup4 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+
+
+#user-popup1 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#user-popup2 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#user-popup3 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#user-popup4 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+.profile{
+  background-color: #fff;
+}
+
+.profile__item {
+  list-style: none;
+}
+
+.profile__item__img {
+  display: inline-block;
+}
+
+.profile__item__info{
+  display: inline-block;
+}
+
+.profile__avt img{
+  margin-top: 10px;
+  margin-right: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile__edit{
+  border: 0.5px solid black;
+  margin-bottom: 10px;
+}
+
+.detail-exam{
+  background: #fff;
+}
+
+.detail-box {
+  margin-left: 20px;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+}
+/* end main  */

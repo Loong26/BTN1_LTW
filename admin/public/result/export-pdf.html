@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kết quả chi tiết</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!-- HEADER  -->
+    
+    <!-- END HEADER  -->
+
+    
+
+    <!-- SIDER -->
+    
+    <!-- END SIDER -->
+
+    <form class="form col-12" style="max-width: none; width: 1055px">
+      <div class="form-group">
+        <label for="title"><b>Tên kỳ thi</b></label>
+        <p>Trắc nghiệm HTML</p>
+      </div>
+      
+      <div class="form-group">
+        <label for="subject"><b>Tên môn</b></label>
+        <p>Lập trình web</p>
+      </div>
+      
+      <div class="form-group">
+        <label for="desc"><b>Mô tả</b></label>
+        <p>Kiểm tra kiến thức về HTML cơ bản</p>
+      </div>
+      
+      <div class="form-group" upload-image="upload-image">
+        <label for="thumbnail"><b>Ảnh</b></label>
+        <img
+          class="image-preview"
+          src="https://d1iv5z3ivlqga1.cloudfront.net/wp-content/uploads/2023/10/30114934/Huyen-A%CC%89nh-bi%CC%80a-blog-2023-10-30T114925.545-1024x576.png"
+          upload-image-preview="upload-image-preview"
+        />
+      </div>
+      
+      <div>
+        <label for="desc"><b>Thời gian:</b></label>
+        <a class="badge badge-danger" href="#">Tự do</a>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="1" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 1...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  <i class="fa-solid fa-circle-check"></i>
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="2" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 2...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  <i class="fa-solid fa-circle-xmark"></i>
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  <i class="fa-solid fa-circle-check"></i>
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="3" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 3...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  <i class="fa-solid fa-circle-check"></i>
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="4" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 4...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D  <i class="fa-solid fa-circle-check"></i>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="5" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 5...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  <i class="fa-solid fa-circle-check"></i>
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="6" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 6...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  <i class="fa-solid fa-circle-check"></i>
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="7" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 7...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  <i class="fa-solid fa-circle-check"></i>
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="8" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 8...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  <i class="fa-solid fa-circle-xmark"></i>
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D <i class="fa-solid fa-circle-check"></i>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="9" style="width: 40px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 9...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  <i class="fa-solid fa-circle-check"></i>
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D 
+          </li>
+        </ul>
+      </div>
+      
+      <div class="form-question">
+        <div class="form-group col-12">
+          <div style="margin-top: 10px;">
+            <b>Câu hỏi số:</b>
+            <input type="number" min="1" value="10" style="width: 45px; font-weight: bold;" disabled/>
+          </div>
+          <textarea
+            class="form-control textarea-mce"
+            id="desc"
+            name="description"
+            value="rows"
+            style="font-weight: bold;"
+            disabled
+          >Nội dung câu hỏi 10...</textarea
+          >
+        </div>
+        <ul>
+          <li>
+            <b>A. </b>Đáp án A  
+          </li>
+      
+          <li>
+            <b>B. </b>Đáp án B  <i class="fa-solid fa-circle-check"></i>
+          </li>
+      
+          <li>
+            <b>C. </b>Đáp án C  
+          </li>
+      
+          <li>
+            <b>D. </b>Đáp án D 
+          </li>
+        </ul>
+      </div>
+    </form>
+
+    <button class="btn btn-danger" id="create_pdf" style="background: #CC0D00; margin-left: 500px; margin-bottom: 10px;">Xuất báo cáo ra file định dạng PDF</button>
+
+    <a class="btn btn-primary" style="margin-left: 555px; margin-bottom: 10px;" href="http://127.0.0.1:5500/BTN1_LTW/admin/public/result/detail.html">Trở về trang kết quả</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="../../js/export.js"></script>
+  </body>
+</html>
