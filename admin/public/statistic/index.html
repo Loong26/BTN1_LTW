@@ -14,6 +14,18 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.min.js"
+      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -91,7 +103,7 @@
             <div class="card-header"><b>Bộ lọc</b></div>
             <div class="card-body"> 
               <div class="row"> 
-                <div class="col-6">
+                <div class="col-4">
                   <div sort="sort">
 
                     <select class="form-control" name="sort" sort-select="sort-select">
@@ -132,155 +144,163 @@
                   </div>
 
                 </div>
+
+                <div class="col-4"></div>
+
+                <div class="col-4">
+                  <button class="btn btn-danger" id="create_pdf" style="background: #CC0D00; margin-right: 10px;">Xuất báo cáo ra file định dạng PDF</button>
+                </div>
                 
               </div>
             </div>
           </div>
           <br>
-          <div class="row">
+          <form class="form col-12" style="max-width: none; width: 1055px">
+            <div class="row">
 
-            <div class="col-12">
-              <div class="card mb-4">
-                <div class="card-header text-center">
-                  <b>Tổng số lần tham gia</b>
-                </div>
-
-                <div class="card-body text-center">
-                  <div class="chart-wrap" style="margin-left: 0;">
-                    <ul>
-                      <li style="list-style: none;"><b>Trắc nghiệm HTML:</b> 
-                        <span style="color: red;"><b>350</b>/<b>1000</b> = <b style="color: red;">35%</b></span>
-                        <span style="background-color:#cc0e0081;"></span>
-                      </li>
-
-                      <br>
-
-                      <li style="list-style: none;"><b>Kiểm tra giữa kì:</b> 
-                        <span style="color: red;"><b>250</b>/<b>1000</b> = <b style="color: red;">25%</b></span>
-                        <span style="background-color:#cc0e0081;"></span>
-                      </li>
-
-                      <br>
-
-                      <li style="list-style: none;"><b>Kiểm tra bổ sung:</b> 
-                        <span style="color: red;"><b>300</b>/<b>1000</b> = <b style="color: red;">30%</b></span>
-                        <span style="background-color:#cc0e0081;"></span>
-                      </li>
-
-                      <br>
-
-                      <li style="list-style: none;"><b>Kiểm tra lý thuyết phân mảnh:</b> 
-                        <span style="color: red;"><b>100</b>/<b>1000</b> = <b style="color: red;">10%</b></span>
-                        <span style="background-color:#cc0e0081;"></span>
-                      </li>
-                    </ul>
-                    <br>
-                    
+              <div class="col-12">
+                <div class="card mb-4">
+                  <div class="card-header text-center">
+                    <b>Tổng số lần tham gia</b>
                   </div>
-                  <div class="chart-wrap" style="margin-top: 10px;">
-                    <figure class="pie-chart"
-                      style="background: conic-gradient(
-                        from 0deg,
-                        #cc0e0081 0,
-                        #cc0e0081 calc(35%),
 
-                        #c8cfd6 calc(35%),
-                        #c8cfd6 calc(35% + 25%),
-
-                        #FF6E39 calc(35% + 25%),
-                        #FF6E39 calc(35% + 25% + 30%),
-
-                        #8536cb52 calc(35% + 25% + 30%),
-                        #8536cb52 calc(35% + 25% + 30% + 10%)
-                      ); width: 120px; height: 120px;">
-                    </figure>
-
-                    <div class="chart-info">
+                  <div class="card-body text-center">
+                    <div class="chart-wrap" style="margin-left: 0;">
                       <ul>
-                        <li><span style="background-color:#cc0e0081;"></span>&nbsp;<b>Trắc nghiệm HTML</b></li>
-                        <li><span style="background-color:#c8cfd6;"></span>&nbsp;<b>Kiểm tra giữa kì</b></li>
-                        <li><span style="background-color:#FF6E39;"></span>&nbsp;<b>Kiểm tra bổ sung</b></li>
-                        <li><span style="background-color:#8536cb52;"></span>&nbsp;<b>Kiểm tra lý thuyết phân mảnh</b></li>
+                        <li style="list-style: none;"><b>Trắc nghiệm HTML:</b> 
+                          <span style="color: red;"><b>350</b>/<b>1000</b> = <b style="color: red;">35%</b></span>
+                          <span style="background-color:#cc0e0081;"></span>
+                        </li>
+
+                        <br>
+
+                        <li style="list-style: none;"><b>Kiểm tra giữa kì:</b> 
+                          <span style="color: red;"><b>250</b>/<b>1000</b> = <b style="color: red;">25%</b></span>
+                          <span style="background-color:#cc0e0081;"></span>
+                        </li>
+
+                        <br>
+
+                        <li style="list-style: none;"><b>Kiểm tra bổ sung:</b> 
+                          <span style="color: red;"><b>300</b>/<b>1000</b> = <b style="color: red;">30%</b></span>
+                          <span style="background-color:#cc0e0081;"></span>
+                        </li>
+
+                        <br>
+
+                        <li style="list-style: none;"><b>Kiểm tra lý thuyết phân mảnh:</b> 
+                          <span style="color: red;"><b>100</b>/<b>1000</b> = <b style="color: red;">10%</b></span>
+                          <span style="background-color:#cc0e0081;"></span>
+                        </li>
                       </ul>
+                      <br>
+                      
                     </div>
+                    <div class="chart-wrap" style="margin-top: 10px;">
+                      <figure class="pie-chart"
+                        style="background: conic-gradient(
+                          from 0deg,
+                          #cc0e0081 0,
+                          #cc0e0081 calc(35%),
 
-                  </div>
-                </div>
+                          #c8cfd6 calc(35%),
+                          #c8cfd6 calc(35% + 25%),
 
-              </div>
-            </div>
-          </div>
+                          #FF6E39 calc(35% + 25%),
+                          #FF6E39 calc(35% + 25% + 30%),
 
-          <div class="row">
-            <div class="col-6">
-              <div class="card mb-4">
-                <div class="card-header text-center" id="statistic-chart">
-                  <b>Tỷ lệ hoàn thành & Điểm trung
-                  bình</b>
-                </div>
+                          #8536cb52 calc(35% + 25% + 30%),
+                          #8536cb52 calc(35% + 25% + 30% + 10%)
+                        ); width: 120px; height: 120px;">
+                      </figure>
 
-                <div class="card-body">
-                  <div class="chart-wrap">
-                    <figure class="pie-chart"
-                      style="background: conic-gradient(
-                        from 0deg,
-                        #CC0D00 0,
-                        #CC0D00 calc(80%),
+                      <div class="chart-info">
+                        <ul>
+                          <li><span style="background-color:#cc0e0081;"></span>&nbsp;<b>Trắc nghiệm HTML</b></li>
+                          <li><span style="background-color:#c8cfd6;"></span>&nbsp;<b>Kiểm tra giữa kì</b></li>
+                          <li><span style="background-color:#FF6E39;"></span>&nbsp;<b>Kiểm tra bổ sung</b></li>
+                          <li><span style="background-color:#8536cb52;"></span>&nbsp;<b>Kiểm tra lý thuyết phân mảnh</b></li>
+                        </ul>
+                      </div>
 
-                        #c8cfd6 calc(80%),
-                        #c8cfd6 calc(80% + 20%)
-                      );  width: 120px; height: 120px;">
-                    </figure>
-
-                    <div class="chart-info">
-                      <h6>Tỷ lệ hoàn thành</h6>
-                      <ul>
-                        <li>Hoàn thành: 80% <span style="background-color:#CC0D00;"></span></li>
-                        <li>Không hoàn thành: 20% <span style="background-color:#c8cfd6;"></span></li>
-                      </ul>
                     </div>
                   </div>
 
-                  <div class="chart-wrap">
-                    <figure class="pie-chart"
-                      style="background: conic-gradient(
-                        from 0deg,
-                        #CC0D00 0,
-                        #CC0D00 calc(70%),
-
-                        #c8cfd6 calc(70%),
-                        #c8cfd6 calc(70% + 30%)
-                      ); width: 120px; height: 120px;">
-                    </figure>
-
-                    <div class="chart-info">
-                      <h6>Điểm trung bình</h6>
-                      <ul>
-                        <li>Trên 5: 70% <span style="background-color:#CC0D00;"></span></li>
-                        <li>Dưới 5: 30% <span style="background-color:#c8cfd6;"></span></li>
-                      </ul>
-                    </div>
-
-                  </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-6">
-              <div class="card mb-4">
-                <div class="card-header text-center" id="statistic-chart">
-                  <b>Phân phối điểm số</b>
-                </div>
+            <div class="row">
+              <div class="col-7">
+                <div class="card mb-4">
+                  <div class="card-header text-center" id="statistic-chart">
+                    <b>Tỷ lệ hoàn thành & Điểm trung
+                    bình</b>
+                  </div>
 
-                <div class="card-body">
-                  <canvas id="histogram-chart" width="200" height="150"></canvas>
-                </div>
+                  <div class="card-body">
+                    <div class="chart-wrap">
+                      <figure class="pie-chart"
+                        style="background: conic-gradient(
+                          from 0deg,
+                          #CC0D00 0,
+                          #CC0D00 calc(80%),
 
-                
+                          #c8cfd6 calc(80%),
+                          #c8cfd6 calc(80% + 20%)
+                        );  width: 120px; height: 120px;">
+                      </figure>
+
+                      <div class="chart-info">
+                        <h6>Tỷ lệ hoàn thành</h6>
+                        <ul>
+                          <li>Hoàn thành: 80% <span style="background-color:#CC0D00;"></span></li>
+                          <li>Không hoàn thành: 20% <span style="background-color:#c8cfd6;"></span></li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div class="chart-wrap">
+                      <figure class="pie-chart"
+                        style="background: conic-gradient(
+                          from 0deg,
+                          #CC0D00 0,
+                          #CC0D00 calc(70%),
+
+                          #c8cfd6 calc(70%),
+                          #c8cfd6 calc(70% + 30%)
+                        ); width: 120px; height: 120px;">
+                      </figure>
+
+                      <div class="chart-info">
+                        <h6>Điểm trung bình</h6>
+                        <ul>
+                          <li>Trên 5: 70% <span style="background-color:#CC0D00;"></span></li>
+                          <li>Dưới 5: 30% <span style="background-color:#c8cfd6;"></span></li>
+                        </ul>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
 
-          </div>
+              <div class="col-5">
+                <div class="card mb-4">
+                  <div class="card-header text-center" id="statistic-chart">
+                    <b>Phân phối điểm số</b>
+                  </div>
+
+                  <div class="card-body">
+                    <canvas id="histogram-chart" width="200" height="150"></canvas>
+                  </div>
+
+                  
+                </div>
+              </div>
+
+            </div>
+          </form>
         </div>
       <!-- END MAIN  -->
 
