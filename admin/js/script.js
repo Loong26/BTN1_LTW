@@ -77,7 +77,7 @@ if(loginForm) {
       return;
     }
 
-    window.location.href = "http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html";
+    window.location.href = "https://vulong.me/BTN1_LTW/admin/public/dashboard/dashboard.html";
   });
 }
 // end login
