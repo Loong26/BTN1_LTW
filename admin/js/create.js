@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const string = `
             <li class="active">
-              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/create.html" style="color: white;"> Tạo kỳ thi </a>
+              <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/create.html" style="color: white;"> Tạo kỳ thi </a>
             </li>
             <li>
-              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/edit.html"> Sửa kì thi </a>
+              <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/edit.html"> Sửa kì thi </a>
             </li>
             <li> 
-              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/delete.html" style="background: black";> Xoá kì thi </a>
+              <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/delete.html" style="background: black";> Xoá kì thi </a>
             </li>
         `;
 
@@ -191,7 +191,7 @@ if(buttonSubmit) {
       return;
     }
 
-    window.location.href = "http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/dashboard.html";
+    window.location.href = "https://vulong.me/BTN1_LTW/admin/public/dashboard/dashboard.html";
   });
 }
 // end submit
