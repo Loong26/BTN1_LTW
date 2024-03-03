@@ -11,9 +11,8 @@
 }
 
 #form-to-log{
-  border: 0.5px solid #ff0000;
-  border-radius: 5px;
-  box-shadow: 0 5px 10px rgba(39, 34, 34, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(39, 34, 34, 0.4);
 }
 
 .forgot-password {
@@ -22,4 +21,14 @@
 
 .reset-password {
   color: red;
+}
+
+@media only screen and (max-width: 1000px) {
+  #img-left {
+    display: none;
+  }
+
+  #img-right {
+    display: none;
+  }
 }
