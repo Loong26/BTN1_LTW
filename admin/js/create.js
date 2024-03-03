@@ -175,23 +175,54 @@ if(excelFile) {
 document.getElementById("excel_file").addEventListener("change", handleFileSelect, false);
 // end import excel file
 
+const createAlert = (message, typeButton) => {
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <div class="alert alert-${typeButton}" show-alert="show-alert">${message} <span close-alert><i class="fa-solid fa-circle-xmark"></i></span> </div>
+  `;
+  div.classList.add("message");
+  div.classList.add("info");
+  document.body.appendChild(div);
+
+  const showAlert = document.querySelector("[show-alert]");
+  if(showAlert){
+    const time = 5000;
+    const closeAlert = showAlert.querySelector("[close-alert]");
+
+    setTimeout(() => showAlert.classList.add("alert-hidden"), time);
+
+    closeAlert.addEventListener("click", () => {
+      showAlert.classList.add("alert-hidden");
+    });
+  }
+};
+
 // submit
 const buttonSubmit = document.querySelector("#button-submit");
 if(buttonSubmit) {
   buttonSubmit.addEventListener("click", (e) => {
+    const messageElement = document.querySelector(".message.info");
+    if(messageElement) {
+      document.body.removeChild(messageElement);
+    }
+
     const title = document.querySelector(`input[name="title"]`);
     if(title.value == "") {
-      alert("Vui lòng nhập tên kỳ thi!");
+      createAlert("Vui lòng nhập tên kỳ thi! ", "danger");
+      
       return;
     }
 
     const subject = document.querySelector(`input[name="subject"]`);
     if(subject.value == "") {
-      alert("Vui lòng nhập tên môn!");
+      createAlert("Vui lòng nhập tên môn! ", "danger");
+      
       return;
     }
 
-    window.location.href = "https://vulong.me/BTN1_LTW/admin/public/dashboard/dashboard.html";
+    createAlert("Tạo mới thành công! ", "success");
+
+    setTimeout(() => { window.location.href = 'https://vulong.me/BTN1_LTW/admin/public/dashboard/edit.html'; }, 1500);
   });
 }
 // end submit
