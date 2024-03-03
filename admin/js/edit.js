@@ -39,15 +39,45 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const createAlert = (message, typeButton) => {
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <div class="alert alert-${typeButton}" show-alert="show-alert">${message} <span close-alert><i class="fa-solid fa-circle-xmark"></i></span> </div>
+  `;
+  div.classList.add("message");
+  div.classList.add("info");
+  document.body.appendChild(div);
+
+  const showAlert = document.querySelector("[show-alert]");
+  if(showAlert){
+    const time = 5000;
+    const closeAlert = showAlert.querySelector("[close-alert]");
+
+    setTimeout(() => showAlert.classList.add("alert-hidden"), time);
+
+    closeAlert.addEventListener("click", () => {
+      showAlert.classList.add("alert-hidden");
+    });
+  }
+};
+
 const showPopup = () => {
+  const messageElement = document.querySelector(".message.info");
+  if(messageElement) {
+    document.body.removeChild(messageElement);
+  }
   var popup = document.getElementById('popup');
   popup.style.display = 'block';
 }
 
 const closePopup = () => {
+  const messageElement = document.querySelector(".message.info");
+  if(messageElement) {
+    document.body.removeChild(messageElement);
+  }
   var popup = document.getElementById('popup');
   popup.style.display = 'none';
-  alert("Cập nhật thành công!");
+  createAlert("Cập nhật thành công! ", "success");
 }
 
 // set time
@@ -170,12 +200,17 @@ const excelFile = document.querySelector("#excel_file");
 
 if(excelFile) {
   excelFile.addEventListener("change", () => {
+    const messageElement = document.querySelector(".message.info");
+    if(messageElement) {
+      document.body.removeChild(messageElement);
+    }
+
     const files = excelFile.files;
     if (files.length > 0) {
       // Lấy tên của file đầu tiên
       const fileName = files[0].name.split(".")[1];
       if(fileName != "xlsx" && fileName != "xls"){
-        alert("Chỉ cho phép tải lên file Excel.");
+        createAlert("Chỉ cho phép tải lên file Excel. ", "danger");
         excelFile.value = ''; // Xóa giá trị của input
         return;
       }
