@@ -1,105 +1,29 @@
-// option select
-const selectElement = document.querySelector('select[sort-select="sort-select"]');
-if(selectElement) {
-  selectElement.addEventListener("change", () => {
-    const option = selectElement.value;
-
-    const buttonExam = document.querySelector("#button-exam");
-    const timeCheck = document.querySelector("#time-check");
-
-    if(option == "all") {
-      buttonExam.classList.add("time-hidden");
-      timeCheck.classList.add("time-hidden");
-    } else if(option == "exam") {
-      buttonExam.classList.remove("time-hidden");
-      timeCheck.classList.add("time-hidden");
-
-      const arrButtonExam = buttonExam.querySelectorAll(`[button-option-exam]`);
-      arrButtonExam.forEach((button) => {
-        button.addEventListener("click", () => {
-          if (!button.classList.contains("active")) {
-            arrButtonExam.forEach(item => {
-              item.classList.remove("active");
-            });
-
-            button.classList.add("active");
-          }
-        });
-      });
-    } else {
-      buttonExam.classList.add("time-hidden");
-      timeCheck.classList.remove("time-hidden");
-    }
-  });
-}
-// end option select
-
-// bar chart
-const data = {
-  labels: ["0-10", "11-20", "21-30", "31-40", "41-50"],
-  datasets: [
-    {
-      label: "Phân phối điểm số",
-      data: [12, 19, 3, 5, 2],
-      backgroundColor: "rgba(255, 99, 132, 0.5)",
-      borderColor: "#CC0D00",
-      borderWidth: 1,
-    },
-  ],
-};
-
-const options = {
-  scales: {
-    yAxes: [
-      {
-        ticks: {
-          beginAtZero: true,
-        },
-      },
-    ],
-  },
-};
-
-const ctx = document.getElementById("histogram-chart").getContext("2d");
-const histogramChart = new Chart(ctx, {
-  type: "bar",
-  data: data,
-  options: options,
-});
-// end bar chart
-
-
-
-
-// convert to pdf
 (function () {
   var form = $(".form"),
     cache_width = form.width(),
-    a4 = [841.89, 595.28]; // for a4 size paper width and height
+    a4 = [595.28, 841.89]; // for a4 size paper width and height
 
   $("#create_pdf").on("click", function () {
     $("body").scrollTop(0);
     createPDF();
   });
-
-  // Create PDF
+  //create pdf
   function createPDF() {
     getCanvas().then(function (canvas) {
       var img = canvas.toDataURL("image/png"),
         doc = new jsPDF({
-          orientation: 'landscape', // Change to landscape mode
           unit: "px",
           format: "a4",
         });
       doc.addImage(img, "JPEG", 20, 20);
-      doc.save("Thong ke.pdf");
+      doc.save("Ket qua.pdf");
       form.width(cache_width);
     });
   }
 
-  // Create canvas object
+  // create canvas object
   function getCanvas() {
-    form.width(a4[0]+180).css("max-width", "none"); // Adjust canvas width for landscape mode
+    form.width(a4[0] * 1.33333 - 80).css("max-width", "none");
     return html2canvas(form, {
       imageTimeout: 2000,
       removeContainer: true,
@@ -183,4 +107,3 @@ const histogramChart = new Chart(ctx, {
     }
   };
 })(jQuery);
-// end convert to pdf

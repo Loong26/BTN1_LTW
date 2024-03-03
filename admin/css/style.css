@@ -382,4 +382,112 @@
   overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
   max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
 }
+
+
+
+#user-popup1 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#user-popup2 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#user-popup3 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+#user-popup4 {
+  position: fixed;
+  height: 3000px;
+  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(244, 236, 236);
+  color: black;
+  border: 2px solid red;
+  border-radius: 8px;
+  padding: 20px;
+  z-index: 999; /* Đảm bảo popup hiển thị trên cùng */
+  overflow-y: auto; /* Kích hoạt thanh cuộn theo chiều dọc nếu nội dung vượt quá kích thước */
+  max-height: 80%; /* Đặt chiều cao tối đa của popup, vượt quá sẽ kích hoạt thanh cuộn */
+}
+
+.profile{
+  background-color: #fff;
+}
+
+.profile__item {
+  list-style: none;
+}
+
+.profile__item__img {
+  display: inline-block;
+}
+
+.profile__item__info{
+  display: inline-block;
+}
+
+.profile__avt img{
+  margin-top: 10px;
+  margin-right: 50px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile__edit{
+  border: 0.5px solid black;
+  margin-bottom: 10px;
+}
+
+.detail-exam{
+  background: #fff;
+}
+
+.detail-box {
+  margin-left: 20px;
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.1);
+}
 /* end main  */
