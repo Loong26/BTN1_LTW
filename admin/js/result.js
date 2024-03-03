@@ -24,13 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const string = `
             <li> 
-              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/create.html" style="background: black";> Tạo kỳ thi </a>
+              <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/create.html" style="background: black";> Tạo kỳ thi </a>
             </li>
             <li> 
-              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/edit.html" style="background: black";> Sửa kì thi </a>
+              <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/edit.html" style="background: black";> Sửa kì thi </a>
             </li>
             <li> 
-              <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/delete.html" style="background: black";> Xoá kì thi </a>
+              <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/delete.html" style="background: black";> Xoá kì thi </a>
             </li>
         `;
 

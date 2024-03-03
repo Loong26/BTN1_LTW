@@ -13,13 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const string = `
           <li>
-            <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/create.html"> Tạo kỳ thi </a>
+            <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/create.html"> Tạo kỳ thi </a>
           </li>
           <li>
-            <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/edit.html" > Sửa kì thi </a>
+            <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/edit.html" > Sửa kì thi </a>
           </li>
           <li class="active"> 
-            <a href="http://127.0.0.1:5500/BTN1_LTW/admin/public/dashboard/delete.html" style="color: white;"> Xoá kì thi </a>
+            <a href="https://vulong.me/BTN1_LTW/admin/public/dashboard/delete.html" style="color: white;"> Xoá kì thi </a>
           </li>
         `;
 
