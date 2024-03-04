@@ -1,3 +1,8 @@
+const validateEmail = (email) => {
+  const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  return regex.test(email);
+};
+
 // show tag list exam
 document.addEventListener("DOMContentLoaded", () => {
   const parentItems = document.querySelectorAll(".parent-item-exam");
@@ -64,11 +69,15 @@ const createAlert = (message, typeButton) => {
   }
 };
 
-const showPopup1 = () => {
+const removeAlert = () => {
   const messageElement = document.querySelector(".message.info");
   if(messageElement) {
     document.body.removeChild(messageElement);
   }
+};
+
+const showPopup1 = () => {
+  removeAlert();
   var popup = document.getElementById('popup1');
   popup.style.display = 'block';
 }
@@ -80,10 +89,7 @@ const closePopup1 = () => {
 }
 
 const showPopup2 = () => {
-  const messageElement = document.querySelector(".message.info");
-  if(messageElement) {
-    document.body.removeChild(messageElement);
-  }
+  removeAlert();
   var popup = document.getElementById('popup2');
   popup.style.display = 'block';
 }
@@ -95,10 +101,7 @@ const closePopup2 = () => {
 }
 
 const showPopup3 = () => {
-  const messageElement = document.querySelector(".message.info");
-  if(messageElement) {
-    document.body.removeChild(messageElement);
-  }
+  removeAlert();
   var popup = document.getElementById('popup3');
   popup.style.display = 'block';
 }
@@ -110,10 +113,7 @@ const closePopup3 = () => {
 }
 
 const showPopup4 = () => {
-  const messageElement = document.querySelector(".message.info");
-  if(messageElement) {
-    document.body.removeChild(messageElement);
-  }
+  removeAlert();
   var popup = document.getElementById('popup4');
   popup.style.display = 'block';
 }
@@ -123,3 +123,53 @@ const closePopup4 = () => {
   popup.style.display = 'none';
   createAlert("Cập nhật thành công! ", "success");
 }
+
+// submit
+const buttonCreate = document.querySelector("#button-create");
+if(buttonCreate) {
+  buttonCreate.addEventListener("click", (e) => {
+    e.preventDefault();
+    
+    removeAlert();
+
+    const title = document.querySelector(`input[name="title"]`);
+    if(title.value == "") {
+      createAlert("Vui lòng nhập tên sinh viên! ", "danger");
+      
+      return;
+    }
+
+    const cardId = document.querySelector(`input[name="id"]`);
+    if(cardId.value == "") {
+      createAlert("Vui lòng nhập mã sinh viên! ", "danger");
+      
+      return;
+    }
+
+    const classroom = document.querySelector(`input[name="clsr"]`);
+    if(classroom.value == "") {
+      createAlert("Vui lòng nhập lớp của sinh viên! ", "danger");
+      
+      return;
+    }
+
+    const email = document.querySelector(`input[name="email"]`);
+    if(email.value == "") {
+      createAlert("Vui lòng nhập email của sinh viên! ", "danger");
+      
+      return;
+    }
+
+    if(!validateEmail(email.value)) {
+      createAlert("Vui lòng nhập đúng định dạng là email(đuôi @gmail.com)! ", "danger");
+      
+      return;
+    }
+
+
+    createAlert("Tạo mới sinh viên thành công! ", "success");
+
+    setTimeout(() => { window.location.href = 'https://vulong.me/BTN1_LTW/admin/public/users/index.html'; }, 1500);
+  });
+}
+// end submit
