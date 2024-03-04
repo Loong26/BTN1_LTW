@@ -5,10 +5,14 @@
     <title>Question</title>
     <!-- aweSome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- //bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
     label{ 
         font-weight: bold;
+        padding-left:  20px;
+        padding-top : 15px;
     }
     .correct {
         color: green;
@@ -22,7 +26,7 @@
         flex-wrap: wrap;
         justify-content: space-between; 
         position: fixed;
-        top: 0px;
+        top: 20px;
         right: 5px;
         width: 300px;
     }
@@ -32,24 +36,28 @@
         right: 10px;
         width: 200px;
         height: 100px;
-        border: 3.5px solid black;
-        background-color: #80ff80 ;
+        background-color: white ;
         z-index: 1;
         display: none;
         opacity: 10;
+        border: black 1.9px solid;
+        border-radius: 5px;
     }
     .modall_header{
         
     }
     .modall_title{
         padding-left: 30%;
+        font-weight: bold;
     }
     .modall_body{
         padding-left: 5%;
     }
     .nut{
         border-radius: 5px;
-        background-color:  #ff6666;
+        background-color:  #d30000;
+        color : white;
+        border-color: #d30000;
     }
     .modall_footer{
         display: flex; 
@@ -59,20 +67,27 @@
 
     }
     .timeRemain{
-        border: solid 2px black ;
+        border:  #d30000 solid 2px ;
         border-radius: 5px;
-        background-color:  #ff6666;
+        background-color:  #d30000;
+        color : white;
+        width: 220px;
+        height: 30px;
+        text-align: center;
     }
     .iconn{
         position: absolute;
         top:0px;
-        right : 0px;
+        right : 5px;
+        
     }
     .footer{
         flex-direction: column;
         align-items: center;
-        background-color: 80ff80;
+        background-color: #a30202;
         display: none;
+        color: white;
+        font-size: 18px;
     }
     .footer span {
         font-weight: bold;
@@ -93,6 +108,7 @@
         outline: none; /* Loại bỏ viền khi focus */
         cursor: pointer; /* Con trỏ chuột khi hover */
         margin-right: 15px;
+        margin-left: 20px;
     }
 
     /* Thiết lập màu nền khi nút radio được chọn */
@@ -106,7 +122,10 @@
         box-shadow: 0 0 5px violet; /* Đổ bóng */
     }
     form div {
-        margin-top: 15px;
+        margin-top: 25px;
+        width: 1000px;
+        height: 150px;
+        
     }
     form {
         padding-left: 20px;
@@ -114,8 +133,30 @@
     .monHoc{
         padding-left: 35vw;
     }
+    .form-question {
+        box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        margin-left: 200px;
+    }
+    .yes{
+        background-color: #d30000;
+        color: white;
+        border-radius: 5px;
+        width: 61px;
+        height: 30px;
+    }
+    .no{
+        background-color: #d30000;
+        color: white;
+        border-radius: 5px;
+    }
+    .button-back{
+        position: fixed;
+        top: 15px;
+        left: 18px;
+    }
 </style>
-<body>
+<body style = "background-color : #f8f9fa">
     <h1 class = "monHoc">Trắc nghiệm kĩ năng sống </h1><br><br>
     <div class = "header">
         <span class = "timeRemain"></span>
@@ -139,6 +180,7 @@
             <button class = "no">Không</button>
         </div>
     </div>
+    <a href="https://vulong.me/BTN1_LTW/home.html" class="btn btn-danger button-back"> Trở về trang trước</a>
     <script>
         const data = {
             "Theo nhật báo NewYork Times , đâu là cách kiếm người yêu nhanh nhất : ":{
@@ -201,6 +243,7 @@
                 <input type="radio" name = "question${index+1}" value = "C" ><span class = "span_option">C. ${data[key].option[2]}</span><br>
                 <input type="radio" name = "question${index+1}" value = "D" ><span class = "span_option">D. ${data[key].option[3]}</span><br>
             `;
+            child.classList.add("form-question");
             form.appendChild(child);
         });
         // handle submit + ẩn nút submit
@@ -217,14 +260,19 @@
                 const value = document.querySelector(`#id${indexquestion+1}`);
                 const elements = value.querySelectorAll(`[name = question${indexquestion+1}]`);
                 let flag = false;
+                let ansflag = false;
+                let tmp  = false ;
                 [...elements].forEach((key,index) => {
                     if(key.tagName === "INPUT" && key.type === "radio"){
-                        if(key.checked && key.value === data[question].answer)flag = true;
+                        if(key.checked && key.value === data[question].answer)flag = true , ansflag = true;
                         else if(key.checked && !(key.value === data[question].answer)){
-                            key.nextElementSibling.style.backgroundColor = "red";
+                            key.nextElementSibling.innerHTML += ` <i class="fa fa-times-circle wrong" aria-hidden="true"></i>`
+                            ansflag = true;
                         }
                         if(key.value === data[question].answer){
-                            key.nextElementSibling.style.backgroundColor = "#80ff80";
+                            const iconcheck = document.createElement('i') ;
+                            key.nextElementSibling.innerHTML += ` <i  style = "color : blue;" class="fa fa-check-circle" aria-hidden="true"></i>`
+                            tmp = key.nextElementSibling;
                         }
                     }
                 });
@@ -234,13 +282,8 @@
                     value.firstElementChild.nextElementSibling.classList.add("fa-check-circle");
                     value.firstElementChild.nextElementSibling.classList.add("correct");
                 }
-                else {
-                    //handle css
-                    value.firstElementChild.nextElementSibling.classList.add("fa");
-                    value.firstElementChild.nextElementSibling.classList.add("fa-times");
-                    value.firstElementChild.nextElementSibling.classList.add("wrong");
-                    value.firstElementChild.style.textDecoration = "line-through";
-                    value.firstElementChild.style.textDecorationThickness = "0.4px" ;
+                if(!ansflag){
+                    tmp.firstElementChild.style.color = "black";
                 }
             });
             const result1 = document.querySelector(".result1");
@@ -251,7 +294,7 @@
             document.querySelector(".footer").scrollIntoView({ behavior: 'smooth' });
         });
         // handle timeRemain
-        let time = 3600 ;
+        let time = 200000 ;
         const timeRemain = document.querySelector(".timeRemain");
         const id = setInterval(() => {
             if(time === 0){
@@ -259,7 +302,7 @@
                 timeRemain.style.display = "none";
                 clearInterval(id);
             }
-            timeRemain.textContent = `Còn lại :${Math.floor(time/3600)} giờ ${Math.floor((time%3600)/60)} phút ${time%60} giây`
+            timeRemain.textContent = `Còn lại: ${Math.floor(time/3600)} giờ ${Math.floor((time%3600)/60)} phút ${time%60} giây`
             time -- ;
         },1000);
         //------------------------------
@@ -285,12 +328,12 @@
         })
         // create nut  và sự kiện
         const nut = document.querySelector('.nut');
-        console.log(nut)
         nut.addEventListener('click',() => {
             modall.style.display = "block";
             timeRemain.style.display = "none";
             nut.style.display = "none";
         });
+
     </script>
 </body>
 </html>
