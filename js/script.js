@@ -61,6 +61,7 @@ if(loginForm) {
       return;
     }
 
+
     createAlert("Đăng nhập thành công! ", "success");
 
     setTimeout(() => { window.location.href = 'https://vulong.me/BTN1_LTW/home.html'; }, 1500);

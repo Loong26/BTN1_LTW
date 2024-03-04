@@ -1,0 +1,53 @@
+{
+    "exams": {
+        "ongoing": [
+            {
+                "class": "LẬP TRÌNH WEB",
+                "name": "Luyện tập",
+                "time": "12/01/2024 00:00 - 12/06/2024 23:00",
+                "image": "https://megaweb.vn/upload/files/lap-trinh-web-la-gi-kien-thuc-ve-lap-trinh-va-thiet-ke-web.jpeg",
+                "description": "Luyện tập các kiến thức liên quan đến HTML, CSS, ..."
+            },
+            {
+                "class": "LẬP TRÌNH WEB",
+                "name": "Kiểm tra giữa kỳ",
+                "time": "01/03/2024 09:00 - 08/03/2024 11:00",
+                "image": "https://file.itptit.com/s0/files/398a4800-c6c8-4d70-86d3-32e4ef79e666/lap-trinh-web.jpg",
+                "description": "Bài thi gồm 40 câu trắc nghiệm, kiểm tra kiến thức Frontend."
+            },
+            {
+                "class": "NHẬP MÔN TRÍ TUỆ NHÂN TẠO",
+                "name": "Kiểm tra giữa kỳ",
+                "time": "03/03/2024 14:00 - 10/03/2024 17:00",
+                "image": "https://hvcsnd.edu.vn/Uploads/2019/11/6/14/phat-trien-tri-tue-nhan-tao-ai-tai-viet-nam-thuc-trang-kinh-nghiem-quoc-te-va-xu-huong-phat-trien-2.jpg",
+                "description": "Bài thi gồm 40 câu trắc nghiệm, kiểm tra kiến thức phần Search và Logic."
+            }
+        ],
+        "upcoming": [
+            {
+                "class": "LẬP TRÌNH WEB",
+                "name": "Kiểm tra cuối kỳ",
+                "time": "20/06/2024 08:00 - 20/06/2024 10:00",
+                "image": "https://plus.vtc.edu.vn/wp-content/uploads/2022/08/lap-trinh-web.jpg",
+                "description": "Bài thi gồm 60 câu trắc nghiệm, kiểm tra kiến thức Frontend và Backend."
+            },
+            {
+                "class": "NHẬP MÔN TRÍ TUỆ NHÂN TẠO",
+                "name": "Kiểm tra cuối kỳ",
+                "time": "15/06/2024 13:00 - 15/06/2024 15:00",
+                "image": "https://cdn.thuvienphapluat.vn/uploads/tintuc/2022/09/08/giao-duc-bang-tri-tue-nhan-tao.jpg",
+                "description": "Bài thi gồm 60 câu trắc nghiệm, kiểm tra kiến thức phần Search, Logic và Machine Learning."
+            }
+
+        ],
+        "ended": [
+            {
+                "class": "LỊCH SỬ ĐẢNG",
+                "name": "Kiểm tra cuối kỳ",
+                "time": "20/12/2023 08:00 - 20/12/2023 10:00",
+                "image": "https://xdcs.cdnchinhphu.vn/446259493575335936/2023/3/10/dangky-1678414634214362948075.jpg",
+                "description": "Bài thi gồm 60 câu trắc nghiệm."
+            }
+        ]
+    }
+}
