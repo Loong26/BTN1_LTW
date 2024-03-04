@@ -1,5 +1,5 @@
 function load_data_content() {
-  let jsonPath = "../data/exams.json";
+  let jsonPath = "/BTN1_LTW/data/exams.json";
   fetch(jsonPath)
     .then((response) => response.json())
     .then((data) => {
