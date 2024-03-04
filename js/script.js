@@ -63,7 +63,7 @@ if(loginForm) {
 
     createAlert("Đăng nhập thành công! ", "success");
 
-    window.location.href = "https://vulong.me/BTN1_LTW/home.html";
+    setTimeout(() => { window.location.href = 'https://vulong.me/BTN1_LTW/home.html'; }, 1500);
   });
 }
 // end login
@@ -76,19 +76,25 @@ if(formReset) {
   registerButton.addEventListener("click", (e) => {
     e.preventDefault();
 
+    const messageElement = document.querySelector(".message.info");
+    if(messageElement) {
+      document.body.removeChild(messageElement);
+    }
+
     const email = document.querySelector(`input[name="email"]`);
     if(email.value == "") {
-      alert("Vui lòng nhập email!");
+      createAlert("Vui lòng nhập email! ", "danger");
       return;
     }
 
     if (!validateEmail(email.value)) {
-      alert("Vui lòng nhập đúng định dạng email!");
+      createAlert("Vui lòng nhập đúng định dạng email! ", "danger");
       return;
     }
 
-    window.location.href = "https://vulong.me/BTN1_LTW/index.html";
-    alert("Kiểm tra email để lấy mã OTP!");
+    createAlert("Kiểm tra email để lấy mã OTP! ", "success");
+
+    setTimeout(() => { window.location.href = 'https://vulong.me/BTN1_LTW/index.html'; }, 1500);
   });
 }
 // end reset password
@@ -99,38 +105,44 @@ if(registerForm) {
   const registerButton = document.querySelector("#button-register");
   registerButton.addEventListener("click", (e) => {
     e.preventDefault();
+
+    const messageElement = document.querySelector(".message.info");
+    if(messageElement) {
+      document.body.removeChild(messageElement);
+    }
     
     const email = document.querySelector(`input[name="email"]`);
     const userName = document.querySelector(`input[name="user-name"]`);
     const password = document.querySelector(`input[name="password"]`);
 
     if(email.value == "") {
-      alert("Vui lòng nhập email!");
+      createAlert("Vui lòng nhập email! ", "danger");
       return;
     }
 
     if(userName.value == "") {
-      alert("Vui lòng nhập tên đăng nhập!");
+      createAlert("Vui lòng nhập tên đăng nhập! ", "danger");
       return;
     }
 
     if(password.value == "") {
-      alert("Vui lòng nhập mật khẩu!");
+      createAlert("Vui lòng nhập mật khẩu! ", "danger");
       return;
     }
 
     if (!validateEmail(email.value)) {
-      alert("Vui lòng nhập đúng định dạng email!");
+      createAlert("Vui lòng nhập đúng định dạng email! ", "danger");
       return;
     }
 
     if (!validateUsername(userName.value)) {
-      alert("Vui lòng nhập đúng định dạng là mã sinh viên!");
+      createAlert("Vui lòng nhập đúng định dạng là mã sinh viên! ", "danger");
       return;
     }
 
-    alert("Đăng kí tài khoản thành công!");
-    window.location.href = "https://vulong.me/BTN1_LTW/index.html";
+    createAlert("Đăng kí tài khoản thành công! ", "success");
+
+    setTimeout(() => { window.location.href = 'https://vulong.me/BTN1_LTW/index.html'; }, 1500);
   });
 }
 // end register
