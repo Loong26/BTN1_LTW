@@ -1,0 +1,14 @@
+.header {
+    background-color: #d30000;
+}
+ .container {
+    max-width: 100%;
+}
+
+.btn-outline-danger:hover, .btn-outline-danger:active {
+    background-color: #d30000;
+}
+
+.btn-danger {
+    background-color: #d30000;
+}

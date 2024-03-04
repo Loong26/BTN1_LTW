@@ -34,7 +34,7 @@ if(loginForm) {
       return;
     }
 
-    window.location.href = "https://vulong.me/BTN1_LTW/quiz.html";
+    window.location.href = "../home.html";
   });
 }
 // end login
@@ -58,7 +58,7 @@ if(formReset) {
       return;
     }
 
-    window.location.href = "https://vulong.me/BTN1_LTW/index.html";
+    window.location.href = "../index.html";
     alert("Kiểm tra email để lấy mã OTP!");
   });
 }
@@ -101,7 +101,7 @@ if(registerForm) {
     }
 
     alert("Đăng kí tài khoản thành công!");
-    window.location.href = "https://vulong.me/BTN1_LTW/index.html";
+    window.location.href = "../index.html";
   });
 }
 // end register
