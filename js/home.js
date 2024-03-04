@@ -1,5 +1,5 @@
 function load_data_content() {
-  let jsonPath = "/BTN1_LTW/data/exams.json";
+  let jsonPath = "https://vulong.me/BTN1_LTW/data/exams.json";
   fetch(jsonPath)
     .then((response) => response.json())
     .then((data) => {
@@ -55,7 +55,7 @@ function exam_content(exam, status, key) {
                 <p class="card-text mb-auto">${exam.description}</p>
             </div>
             <div class="container text-center row align-items-center col-2 me-5">
-                <a href="./quiz.html" class="icon-link-hover btn ${btn_attr}" style="font-size: 20px;">${status}</a>
+                <a href="https://vulong.me/BTN1_LTW/quiz.html" class="icon-link-hover btn ${btn_attr}" style="font-size: 20px;">${status}</a>
             </div>
         </div>
     </div>
