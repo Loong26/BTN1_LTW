@@ -8,6 +8,28 @@ const validateEmail = (email) => {
   return regex.test(email);
 };
 
+const createAlert = (message, typeButton) => {
+  const div = document.createElement("div");
+  div.innerHTML = `
+    <div class="alert alert-${typeButton}" show-alert="show-alert">${message} <span close-alert><i class="fa-solid fa-circle-xmark"></i></span> </div>
+  `;
+  div.classList.add("message");
+  div.classList.add("info");
+  document.body.appendChild(div);
+
+  const showAlert = document.querySelector("[show-alert]");
+  if(showAlert){
+    const time = 5000;
+    const closeAlert = showAlert.querySelector("[close-alert]");
+
+    setTimeout(() => showAlert.classList.add("alert-hidden"), time);
+
+    closeAlert.addEventListener("click", () => {
+      showAlert.classList.add("alert-hidden");
+    });
+  }
+};
+
 // login
 const loginForm = document.querySelector("#form-login");
 if(loginForm) {
@@ -16,23 +38,31 @@ if(loginForm) {
   loginButton.addEventListener("click", (e) => {
     e.preventDefault();
 
+    const messageElement = document.querySelector(".message.info");
+    if(messageElement) {
+      document.body.removeChild(messageElement);
+    }
+
     const userName = document.querySelector(`input[name="user-name"]`);
     const password = document.querySelector(`input[name="password"]`);
 
     if(userName.value == "") {
-      alert("Vui lòng nhập tên đăng nhập!");
+      createAlert("Vui lòng nhập tên đăng nhập! ", "danger");
       return;
     }
 
     if(password.value == "") {
-      alert("Vui lòng nhập mật khẩu!");
+      createAlert("Vui lòng nhập mật khẩu! ", "danger");
       return;
     }
 
     if (!validateUsername(userName.value)) {
-      alert("Vui lòng nhập đúng định dạng là mã sinh viên!");
+      createAlert("Vui lòng nhập đúng định dạng là mã sinh viên! ", "danger");
       return;
     }
+
+
+    createAlert("Đăng nhập thành công! ", "success");
 
     window.location.href = "https://vulong.me/BTN1_LTW/home.html";
   });
