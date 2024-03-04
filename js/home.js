@@ -71,7 +71,7 @@ function searchByEnter(input) {
 
 function search() {
   let search = document.getElementById("search-input").value;
-  let jsonPath = "exams.json";
+  let jsonPath = "https://vulong.me/BTN1_LTW/data/exams.json";
   fetch(jsonPath)
     .then((response) => response.json())
     .then((data) => {
