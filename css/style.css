@@ -43,6 +43,16 @@
   top: 70px;
   right: 15px;
   z-index: 9999;
+  animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 15px;
+  }
 }
 
 [show-alert].alert-hidden {
