@@ -1,28 +1,296 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+    <!-- aweSome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+    label{ 
+        font-weight: bold;
+    }
+    .correct {
+        color: green;
+    }
+    .wrong {
+        color: red;
+    }
+    .header{
+        display: flex; 
+        flex-direction: row; 
+        flex-wrap: wrap;
+        justify-content: space-between; 
+        position: fixed;
+        top: 0px;
+        right: 5px;
+        width: 300px;
+    }
+    .modall {
+        position: fixed;
+        top: 0px;
+        right: 10px;
+        width: 200px;
+        height: 100px;
+        border: 3.5px solid black;
+        background-color: #80ff80 ;
+        z-index: 1;
+        display: none;
+        opacity: 10;
+    }
+    .modall_header{
+        
+    }
+    .modall_title{
+        padding-left: 30%;
+    }
+    .modall_body{
+        padding-left: 5%;
+    }
+    .nut{
+        border-radius: 5px;
+        background-color:  #ff6666;
+    }
+    .modall_footer{
+        display: flex; 
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around ;
 
-    <title>Quiz</title>
+    }
+    .timeRemain{
+        border: solid 2px black ;
+        border-radius: 5px;
+        background-color:  #ff6666;
+    }
+    .iconn{
+        position: absolute;
+        top:0px;
+        right : 0px;
+    }
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        background-color: 80ff80;
+        display: none;
+    }
+    .footer span {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .span_option{
+        font-family: "Gill Sans", sans-serif;
+    }
+    /* Ẩn nút radio mặc định */
+    input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        width: 15px; /* Kích thước của nút radio */
+        height: 15px;
+        border: 2px solid #ccc; /* Đường viền */
+        border-radius: 50%; /* Bo tròn nút radio */
+        outline: none; /* Loại bỏ viền khi focus */
+        cursor: pointer; /* Con trỏ chuột khi hover */
+        margin-right: 15px;
+    }
 
-    <!-- css  -->
-    <link rel="stylesheet" href="/BTN1_LTW/css/style.css"/>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-    />
-    <!-- end css  -->
-  </head>
+    /* Thiết lập màu nền khi nút radio được chọn */
+    input[type="radio"]:checked {
+        background-color: #007bff; /* Màu nền */
+        border-color: #007bff; /* Màu đường viền */
+    }
 
-  <body>
-    <h1>QUIZ</h1>
-
-    <!-- script  -->
-    <script src="/BTN1_LTW/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- end script  -->
-  </body>
+    /* Tạo hiệu ứng đổ bóng khi hover */
+    input[type="radio"]:hover {
+        box-shadow: 0 0 5px violet; /* Đổ bóng */
+    }
+    form div {
+        margin-top: 15px;
+    }
+    form {
+        padding-left: 20px;
+    }
+    .monHoc{
+        padding-left: 35vw;
+    }
+</style>
+<body>
+    <h1 class = "monHoc">Trắc nghiệm kĩ năng sống </h1><br><br>
+    <div class = "header">
+        <span class = "timeRemain"></span>
+        <button class = "nut"> Nộp bài</button>
+    </div>
+    <div class="body">
+        <form class = "form"></form>
+    </div>
+    <div class="footer">
+        <span class = "result1"></span><br>
+        <span class = "scroll"></span>
+    </div>
+    <div class = "modall">
+        <div class = "modall_header">
+            <span class = "modall_title">Thông báo</span>
+            <i class = " iconn wrong fa fa-times"></i>
+        </div>
+        <div class = "modall_body">Bạn muốn nộp bài sớm ?</div>
+        <div class = "modall_footer">
+            <button class = "yes">Có</button>
+            <button class = "no">Không</button>
+        </div>
+    </div>
+    <script>
+        const data = {
+            "Theo nhật báo NewYork Times , đâu là cách kiếm người yêu nhanh nhất : ":{
+                option :["Nằm nhà lướt tíc tốc" , "Lên ủy ban đợi phát" , "Tham gia hội đồng hương" , "Thắp hương"],
+                answer : "D"
+            },
+            "Tối nay ăn gì : ":{
+                option :["Cơm mẹ nấu" , "Cơm tự nấu" , "Ăn ngoài" , "Ăn đấm"],
+                answer : "D"
+            },
+            "Em ăn cơm chưa : ":{
+                option :["Em ăn rồi ạ" , "Em chưa ăn ạ" , "Uh" , "Đoán xem"],
+                answer : "C"
+            },
+            "Code lỗi liên tục và không sửa được , chúng ta nên làm gì :":{
+                option :["Nở 1 nụ cười tự tin" , "nhờ  chat GPT" , "đi ra ngoài cho khuây khỏa sau đó quay trở lại fix" , "đe dọa compiler"],
+                answer : "D"
+            },
+            "Mèo thích ăn chuột hay ăn pate :":{
+                option :["Chuột" , "Pate" , "Cả 2" , "Tớ thích cậu"],
+                answer : "D"
+            },
+            "Đâu là món ăn có vị cay mạnh nhất tính đến  đầu năm 2050 theo bình chọn của tạp chí FOX :":{
+                option :["Cà ri Phaal" , "Tom Yum" , "Wasabi Nhật Bản" , "Nhìn em bên người khác"],
+                answer : "D"
+            },
+            "Trà Đá hay Nước Lọc : ":{
+                option :["Trà Đá" , "Nước Lọc" , "Trà Đá và nước lọc" , "Không chọn gì cả"],
+                answer : "A"
+            },
+            "Mùng 8 tháng 3 này nên tặng gì cho crush : ":{
+                option :["Hoa" , "Kẹo mút" , "Iphone 15 ProMax" , "Yêu đương gì tầm này"],
+                answer : "D"
+            },
+            "Theo thống kê thị trường  đầu năm 2024 , đâu là trái cây giới trẻ không muốn ăn nhất : ":{
+                option :["Ổi" , "Sầu Riêng" , "Xoài" , "Bơ"],
+                answer : "D"
+            },
+            "Làm thế nào để chúng ta bước ra khỏi vùng an toàn của bản thân  : ":{
+                option :["Tích lũy nền tảng kiến thức để tăng sự tự tin" , "Dám nghĩ dám làm" , "Sẵn sàng đón nhận thất bại" , "Làm fan MU"],
+                answer : "D"
+            },
+            "Nên làm gì khi người yêu giận":{
+                option :["Dỗ cô ấy" , "Mua đồ ăn cho cô ấy" , "Dẫn cô ấy đi chơi" , "Làm éo gì có người yêu !"],
+                answer : "D"
+            },
+            "Ai là người đẹp trai nhất nền văn minh này :":{
+                option :["Aamin" , "Abmin" , "Acmin" , "Admin"],
+                answer : "D"
+            }
+        }
+        const form = document.querySelector('.form');
+        Object.keys(data).forEach((key,index) => {
+            const child = document.createElement(`div`);
+            child.setAttribute(`id` ,`id${index + 1}`); ;
+            child.innerHTML = `
+                <label> Câu ${index+1} : ${key}</label><i></i><br>
+                <input type="radio" name = "question${index+1}" value = "A" ><span class = "span_option">A. ${data[key].option[0]}</span><br>
+                <input type="radio" name = "question${index+1}" value = "B" ><span class = "span_option">B. ${data[key].option[1]}</span><br>
+                <input type="radio" name = "question${index+1}" value = "C" ><span class = "span_option">C. ${data[key].option[2]}</span><br>
+                <input type="radio" name = "question${index+1}" value = "D" ><span class = "span_option">D. ${data[key].option[3]}</span><br>
+            `;
+            form.appendChild(child);
+        });
+        // handle submit + ẩn nút submit
+        const submit = document.createElement('input');
+        submit.type = "submit";
+        submit.style.display = "none";
+        form.appendChild(submit);
+        submit.addEventListener("click", (event) =>{
+            event.preventDefault();
+            document.querySelector(".header").style.display = "none";
+            // handle result
+            let score = 0 ;
+            Object.keys(data).forEach((question , indexquestion) => {
+                const value = document.querySelector(`#id${indexquestion+1}`);
+                const elements = value.querySelectorAll(`[name = question${indexquestion+1}]`);
+                let flag = false;
+                [...elements].forEach((key,index) => {
+                    if(key.tagName === "INPUT" && key.type === "radio"){
+                        if(key.checked && key.value === data[question].answer)flag = true;
+                        else if(key.checked && !(key.value === data[question].answer)){
+                            key.nextElementSibling.style.backgroundColor = "red";
+                        }
+                        if(key.value === data[question].answer){
+                            key.nextElementSibling.style.backgroundColor = "#80ff80";
+                        }
+                    }
+                });
+                if(flag){
+                    score ++ ;
+                    value.firstElementChild.nextElementSibling.classList.add("fas");
+                    value.firstElementChild.nextElementSibling.classList.add("fa-check-circle");
+                    value.firstElementChild.nextElementSibling.classList.add("correct");
+                }
+                else {
+                    //handle css
+                    value.firstElementChild.nextElementSibling.classList.add("fa");
+                    value.firstElementChild.nextElementSibling.classList.add("fa-times");
+                    value.firstElementChild.nextElementSibling.classList.add("wrong");
+                    value.firstElementChild.style.textDecoration = "line-through";
+                    value.firstElementChild.style.textDecorationThickness = "0.4px" ;
+                }
+            });
+            const result1 = document.querySelector(".result1");
+            result1.textContent = `Số câu đúng của bạn là : ${score}/${Object.keys(data).length} = ${(score/Object.keys(data).length).toFixed(2) * 10} điểm`;
+            const result2 = document.querySelector(".scroll");
+            result2.textContent = `Cuộn lên để xem đáp án `;
+            document.querySelector(".footer").style.display = "flex";
+            document.querySelector(".footer").scrollIntoView({ behavior: 'smooth' });
+        });
+        // handle timeRemain
+        let time = 3600 ;
+        const timeRemain = document.querySelector(".timeRemain");
+        const id = setInterval(() => {
+            if(time === 0){
+                submit.click();
+                timeRemain.style.display = "none";
+                clearInterval(id);
+            }
+            timeRemain.textContent = `Còn lại :${Math.floor(time/3600)} giờ ${Math.floor((time%3600)/60)} phút ${time%60} giây`
+            time -- ;
+        },1000);
+        //------------------------------
+        // create modall
+        const modall = document.querySelector('.modall');
+        //create child x and thêm sự kiện
+        const x = document.querySelector('.fa-times');
+        x.addEventListener('click', () => {
+            modall.style.display = "none";
+            timeRemain.style.display = "inline";
+            nut.style.display = "inline";
+        });
+        //create child yes và sự kiện
+        const yes = document.querySelector(".yes");
+        yes.addEventListener('click',() => {
+            modall.style.display = "none";
+            submit.click();
+        })
+        //create child no và sự kiện
+        const no = document.querySelector('.no');
+        no.addEventListener('click',() => {
+            x.click();
+        })
+        // create nut  và sự kiện
+        const nut = document.querySelector('.nut');
+        console.log(nut)
+        nut.addEventListener('click',() => {
+            modall.style.display = "block";
+            timeRemain.style.display = "none";
+            nut.style.display = "none";
+        });
+    </script>
+</body>
 </html>
